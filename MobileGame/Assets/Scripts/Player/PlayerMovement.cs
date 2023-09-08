@@ -12,6 +12,25 @@ public class PlayerMovement : MonoBehaviour
 	private void FixedUpdate()
 	{
 		_rb.velocity = _myController.MoveDir() * _speed * Time.fixedDeltaTime;
+        Rotate();
 	}
+    private void Update()
+    {
+		
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Debug.Log("Back");
+        }
 
+        if (Input.GetKeyDown(KeyCode.Menu))
+        {
+            Debug.Log("Menu");
+        }
+    }
+
+    private void Rotate()
+	{
+        transform.forward += _myController.MoveDir();
+
+    }
 }
