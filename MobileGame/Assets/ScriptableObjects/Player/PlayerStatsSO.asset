@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92803f43147964e4783cf4aea82d4bdf, type: 3}
+  m_Name: PlayerStatsSO
+  m_EditorClassIdentifier: 
+  healthPoints: 100
+  defPoints: 1
+  atkPoints: 2
+  atkCooldown: 1.5
+  criticalHitRate: 5
+  specialDamage: 20
+  spcAtkCooldown: 8
+  movementSpeed: 500
+  currentLevel: 1
+  expPoints: 0
