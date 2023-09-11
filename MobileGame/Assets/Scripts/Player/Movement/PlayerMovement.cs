@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 	private void FixedUpdate()
 	{
 		_rb.velocity = _myController.MoveDir() * _speed * Time.fixedDeltaTime;
+        Debug.Log($"<color=yellow> Con el color puedo cambiar el color de la fuente. </color>");
         Rotate();
 	}
     private void Update()
