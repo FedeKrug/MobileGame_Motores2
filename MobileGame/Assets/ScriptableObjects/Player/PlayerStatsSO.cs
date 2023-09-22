@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 
-using UnityEditor.PackageManager;
 
 using UnityEngine;
 
@@ -13,7 +11,7 @@ using UnityEngine;
 public class PlayerStatsSO : ScriptableObject
 {
 	[Header("Health:")]
-	public int healthPoints = 100;
+	public int healthPointsHP = 100;
 	//health o healthPoints (HP)?
 	public int defPoints = 1;
 	[Space(10)]
