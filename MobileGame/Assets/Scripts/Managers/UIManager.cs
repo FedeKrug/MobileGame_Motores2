@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-	public static AudioManager instance;
+	public static UIManager instance;
 	private void Awake()
 	{
 		if (instance == null)
@@ -13,10 +13,5 @@ public class AudioManager : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
-	}
-
-	public void SetMasterVolume(float masterVolume)
-	{
-
 	}
 }

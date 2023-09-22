@@ -37,6 +37,7 @@ public class PlayerStatsSO : ScriptableObject
 
 	//Character level
 	//Experience points(XP)
+
 	//Health points(HP)
 	//Mana or energy points(MP/EP)
 	//Attack power(ATK)

@@ -26,6 +26,18 @@ public class CanvasManager : MonoBehaviour
 	//[SerializeField, Range(0.0001f, 1f)] private float _initMusicVol = 0.0001f;
 	[SerializeField] private Slider[] _sliders;
 	//[SerializeField] private AsyncSceneLoader _asynSceneLoader;
+
+
+	private void Start()
+	{
+		Debug.Log($"<color= yellow>{_menuCanvas[0]} es el canvas numero 0.</color>");
+		for (int i = 0; i < _menuCanvas.Length; i++)
+		{
+			_menuCanvas[i].enabled = i == 0;
+		}
+	}
+
+
 	public void EnableMenu(int menuToShow)
 	{
 		//if (_asynSceneLoader != null)
