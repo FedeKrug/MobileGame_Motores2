@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private Controller _myController;
 	[SerializeField] PlayerShootingTest _shootingRef;
 
-	[SerializeField] EnemyCounter _enemyCounterRef;
+	
 	private float _speed;
 
 	private void Start()
@@ -25,14 +25,10 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Update()
 	{
-		if ((_rb.velocity.x != 0 || _rb.velocity.y != 0))
+		if ((_rb.velocity.x != 0 || _rb.velocity.z != 0))
 		{
-			if (_enemyCounterRef.enemiesInLevel)
-			{
 				//El player se mueve
 				_shootingRef.Moving = true;
-			}
-			else _shootingRef.Moving = false;
 		}
 		else _shootingRef.Moving = false;
 
