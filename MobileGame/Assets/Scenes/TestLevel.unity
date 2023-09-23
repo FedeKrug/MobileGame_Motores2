@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseImg: {fileID: 326931}
+  _playerRef: {fileID: 1115374894}
 --- !u!1 &435173000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,8 +1289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootingPoint: {fileID: 435173001}
-  _moving: 1
-  _enemyCounterRef: {fileID: 0}
+  _moving: 0
+  _enemyCounterRef: {fileID: 508580230}
 --- !u!114 &1115374895
 MonoBehaviour:
   m_ObjectHideFlags: 0

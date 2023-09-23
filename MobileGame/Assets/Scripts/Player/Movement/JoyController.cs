@@ -11,6 +11,8 @@ public class JoyController : Controller, IDragHandler, IEndDragHandler
     float maxDistance = 200;
     [SerializeField] RectTransform baseImg = null;
 
+    [SerializeField] PlayerShootingTest _playerRef;
+
     private void Start()
 {
         initPos = transform.position;
@@ -27,6 +29,7 @@ public class JoyController : Controller, IDragHandler, IEndDragHandler
     {
         dir = Vector3.ClampMagnitude((Vector3)eventData.position - initPos, maxDistance);
         transform.position = initPos + dir;
+        _playerRef.Moving = true;
         
     }
 
@@ -34,5 +37,6 @@ public class JoyController : Controller, IDragHandler, IEndDragHandler
 {
         transform.position = initPos;
         dir = Vector3.zero;
+        _playerRef.Moving = false;
     }
 }

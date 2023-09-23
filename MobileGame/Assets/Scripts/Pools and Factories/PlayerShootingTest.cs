@@ -26,6 +26,7 @@ public class PlayerShootingTest : MonoBehaviour
 
 	void Update()
 	{
+		//Si el player se mueve o no hay enemigos return;
 		if (_moving || !_enemyCounterRef.enemiesInLevel) return;
 		_timer -= Time.deltaTime;
 		if (_timer <= 0)

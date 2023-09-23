@@ -25,12 +25,13 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Update()
 	{
-		if ((_rb.velocity.x != 0 || _rb.velocity.z != 0))
-		{
-				//El player se mueve
-				_shootingRef.Moving = true;
-		}
-		else _shootingRef.Moving = false;
+		//Debug.Log($"<color=yellow>{_rb.velocity.x}, {_rb.velocity.z} es rb.velocity del player.</color>");
+		//if ((_rb.velocity.x != 0 || _rb.velocity.z != 0))
+		//{
+		//		//El player se mueve
+		//		_shootingRef.Moving = true;
+		//}
+		//else _shootingRef.Moving = false;
 
 		if (Input.GetKeyDown(KeyCode.Return))
 		{
