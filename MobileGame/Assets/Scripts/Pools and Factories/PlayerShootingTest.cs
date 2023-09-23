@@ -7,8 +7,7 @@ public class PlayerShootingTest : MonoBehaviour
 {
 	[SerializeField] private Transform _shootingPoint;
 	[SerializeField] private bool _moving;
-
-	[SerializeField] private float _maxTime = 1.5f;
+	private float _maxTime;
 	private float _timer;
 
 	public bool Moving
@@ -19,6 +18,7 @@ public class PlayerShootingTest : MonoBehaviour
 
 	void Start()
 	{
+		_maxTime = PlayerManager.instance.PlayerStats.atkCooldown;
 		_timer = _maxTime;
 	}
 
@@ -35,8 +35,8 @@ public class PlayerShootingTest : MonoBehaviour
 
 	private void Shoot()
 	{
-		var p = ProjectileFactory.Instance.pool.GetObject();
-		p.transform.SetPositionAndRotation(_shootingPoint.position, transform.rotation);
+		Projectile projectileRef = ProjectileFactory.Instance.pool.GetObject();
+		projectileRef.transform.SetPositionAndRotation(_shootingPoint.position, transform.rotation);
 		Debug.Log("Shoot()");
 		_timer = _maxTime;
 	}

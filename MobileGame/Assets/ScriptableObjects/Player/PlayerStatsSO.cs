@@ -14,16 +14,17 @@ public class PlayerStatsSO : ScriptableObject
 	[Header("Atk:")]
 	public int atkPoints = 2;
 	public float atkCooldown = 1.5f;
+	
 	//Medido en %.
 	public int criticalHitRate = 5;
 	//Si se da la condicion para ataque critico, depende del criticalHitRate
 
 	[Space(10)]
 	[Header("SpecialAtk:")]
-	public int specialDamage = 20;
+	public int specialDamageState = 20;
 	//Una especie de ataque maximo (como un estado en que su ataque es especial)
 
-	public float spcAtkCooldown = 8;
+	public float spcAtkStateDuration = 8;
 	//Lo que va a durar el specialAttack en su totalidad
 
 	[Space(10)]
@@ -39,20 +40,24 @@ public class PlayerStatsSO : ScriptableObject
 
 
 	//[Lvl/exp]
+	//Arriba
 	//Character level -> int : 8
 	//Experience points(XP) -> float/float: 180/1500
 
 	//[HP/MP]
+	//No van en el menu?:
 	//Health points(HP) -> int/int : 50/100 
 	//Mana or energy points(MP/EP) -> int/int : 25/380
 
 	//[Damage]
+	//Van en el menu:
 	//Attack power(ATK)
+	//Special Attack (SpATK)
 	//Defense or armor rating(DEF)
 	//Speed or agility
 	//Critical hit rate
 
-	//Elemental resistances
+	//Elemental resistances?
 
 
 }

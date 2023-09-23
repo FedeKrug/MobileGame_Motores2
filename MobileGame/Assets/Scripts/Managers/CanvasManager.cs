@@ -30,7 +30,7 @@ public class CanvasManager : MonoBehaviour
 
 	private void Start()
 	{
-		Debug.Log($"<color= yellow>{_menuCanvas[0]} es el canvas numero 0.</color>");
+		//Debug.Log($"<color=#F34D0E>{_menuCanvas[0]} es el canvas numero 0.</color>");
 		for (int i = 0; i < _menuCanvas.Length; i++)
 		{
 			_menuCanvas[i].enabled = i == 0;
