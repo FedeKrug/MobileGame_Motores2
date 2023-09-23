@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
 	public static PlayerManager instance;
+
 	[SerializeField] private Transform _playerPos;
 	[SerializeField] private PlayerStatsSO _playerStats;
-
 	public PlayerStatsSO PlayerStats
 	{
 		get => _playerStats;
