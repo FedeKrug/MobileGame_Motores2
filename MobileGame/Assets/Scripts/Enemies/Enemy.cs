@@ -6,9 +6,9 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] bool _testBool;
-    [SerializeField] float maxVelocity;
-    [SerializeField] float maxSpeed;
+    [SerializeField] private bool _testBool;
+    [SerializeField] private float maxVelocity;
+    [SerializeField] private float maxSpeed;
 
     Vector3 _velocity;
     Vector3 _target;
