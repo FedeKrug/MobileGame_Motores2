@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public abstract class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour, IDamagable
 {
     [SerializeField] private bool _testBool;
     [SerializeField] private float maxVelocity;
     [SerializeField] private float maxSpeed;
+
+    [SerializeField] private float _health;
 
     Vector3 _velocity;
     Vector3 _target;
@@ -56,4 +58,19 @@ public abstract class Enemy : MonoBehaviour
         if (_velocity.magnitude > maxVelocity)
             _velocity = _velocity.normalized * maxVelocity;
     }
+
+	public void TakeDamage(float damage)
+	{
+        _health -= damage;
+        CheckDeath();
+	}
+
+    private void CheckDeath()
+	{
+        if (_health >= 0)
+		{
+            //Die();
+            Destroy(gameObject);
+		}
+	}
 }

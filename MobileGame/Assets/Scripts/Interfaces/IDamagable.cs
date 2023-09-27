@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MagicProjectile
+public interface IDamagable 
 {
-    
-   
+    public void TakeDamage(float damage);
 }

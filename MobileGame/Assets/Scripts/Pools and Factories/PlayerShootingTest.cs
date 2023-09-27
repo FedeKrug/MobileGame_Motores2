@@ -26,7 +26,6 @@ public class PlayerShootingTest : MonoBehaviour
 
 	void Update()
 	{
-		//Si el player se mueve o no hay enemigos return;
 		if (_moving || !_enemyCounterRef.enemiesInLevel) return;
 		_timer -= Time.deltaTime;
 		if (_timer <= 0)
@@ -38,9 +37,8 @@ public class PlayerShootingTest : MonoBehaviour
 
 	private void Shoot()
 	{
-		Projectile projectileRef = ProjectileFactory.Instance.pool.GetObject();
+		MagicProjectile projectileRef = ProjectileFactory.instance.pool.GetObject();
 		projectileRef.transform.SetPositionAndRotation(_shootingPoint.position, transform.rotation);
-		Debug.Log("Shoot()");
 		_timer = _maxTime;
 	}
 }

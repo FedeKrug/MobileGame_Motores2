@@ -14,7 +14,7 @@ public class TestPlayer_ToDelete : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            var p = ProjectileFactory.Instance.pool.GetObject();
+            var p = ProjectileFactory.instance.pool.GetObject();
             p.transform.SetPositionAndRotation(transform.position, Quaternion.identity);
         }
     }
