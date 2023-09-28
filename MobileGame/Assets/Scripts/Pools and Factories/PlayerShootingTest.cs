@@ -7,6 +7,8 @@ public class PlayerShootingTest : MonoBehaviour
 {
 	[SerializeField] private Transform _shootingPoint;
 	[SerializeField] private bool _moving;
+	[SerializeField] EnemyCounter _enemyCounterRef;
+
 	private float _maxTime;
 	private float _timer;
 
@@ -24,7 +26,7 @@ public class PlayerShootingTest : MonoBehaviour
 
 	void Update()
 	{
-		if (!_moving) return;
+		if (_moving || !_enemyCounterRef.enemiesInLevel) return;
 		_timer -= Time.deltaTime;
 		if (_timer <= 0)
 		{
@@ -35,9 +37,8 @@ public class PlayerShootingTest : MonoBehaviour
 
 	private void Shoot()
 	{
-		Projectile projectileRef = ProjectileFactory.Instance.pool.GetObject();
+		MagicProjectile projectileRef = ProjectileFactory.instance.pool.GetObject();
 		projectileRef.transform.SetPositionAndRotation(_shootingPoint.position, transform.rotation);
-		Debug.Log("Shoot()");
 		_timer = _maxTime;
 	}
 }

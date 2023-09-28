@@ -1,17 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyCounter : MonoBehaviour
 {
-	[SerializeField] private int _enemyCant=1;
+	[SerializeField] private int _enemyCant = 1;
 	public bool enemiesInLevel = true;
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.CompareTag("Enemy"))
+		if (other.GetComponent<Enemy>())
 		{
 			_enemyCant--;
 			CheckEnemyCant();
+
 		}
 	}
 
@@ -19,7 +18,7 @@ public class EnemyCounter : MonoBehaviour
 	private void CheckEnemyCant()
 	{
 		//Funciona, pero solo si el enemigo sale fisicamente del trigger, no si se desactiva -> TODO: Revisar
-		if (_enemyCant<=0)
+		if (_enemyCant <= 0)
 		{
 			//Dejar de disparar
 

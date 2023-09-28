@@ -14,6 +14,11 @@ public class PlayerManager : MonoBehaviour
 		get => _playerStats;
 		set => _playerStats = value;
 	}
+	public Transform PlayerPos
+	{
+		get => _playerPos;
+		set => _playerPos = value;
+	}
 
 	private void Awake()
 	{
