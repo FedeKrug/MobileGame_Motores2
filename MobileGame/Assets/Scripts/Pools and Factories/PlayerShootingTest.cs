@@ -37,6 +37,9 @@ public class PlayerShootingTest : MonoBehaviour
 
 	private void Shoot()
 	{
+		//Aim (Apuntar)
+
+
 		MagicProjectile projectileRef = ProjectileFactory.instance.pool.GetObject();
 		projectileRef.transform.SetPositionAndRotation(_shootingPoint.position, transform.rotation);
 		_timer = _maxTime;
