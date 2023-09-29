@@ -20,7 +20,7 @@ public class Player_JSON : MonoBehaviour
 	{
 		Debug.Log($"<color=yellow>Loaded Data</color>");
 		string jsonLoadData = File.ReadAllText(_path );
-		//JsonUtility.FromJson(); se usa para clases que heredan de Monobehaviour
+		//_data =JsonUtility.FromJson<SaveData>(jsonLoadData); se usa para clases que heredan de Monobehaviour
 		JsonUtility.FromJsonOverwrite(jsonLoadData, _data);
 	}
 }
