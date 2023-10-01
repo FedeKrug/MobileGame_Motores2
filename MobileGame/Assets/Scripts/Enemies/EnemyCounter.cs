@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class EnemyCounter : MonoBehaviour
 {
+	//TODO: Usar el EnemyCounter para ayudar al player a apuntar automaticamente
+
 	[SerializeField] private int _enemyCount = 1;
 	public bool enemiesInCounter = true;
 	public bool playerInCounter = false;
@@ -45,10 +47,5 @@ public class EnemyCounter : MonoBehaviour
 		// Puedes ejecutar aquí cualquier acción adicional basada en el contador de enemigos.
 	}
 
-
-}
-
-public class TotalEnemyCounter : MonoBehaviour
-{
 
 }
