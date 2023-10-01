@@ -8,7 +8,7 @@ public class PlayerShooting : MonoBehaviour
 	[SerializeField] private Transform _shootingPoint;
 	[SerializeField] private bool _moving;
 	[SerializeField] EnemyCounter _enemyCounterRef;
-
+	//TODO: Cambiar el enemyCounterRef dependiendo del activeEnemyCounter (EnemyManager)
 	private float _maxTime;
 	private float _timer;
 
@@ -26,7 +26,7 @@ public class PlayerShooting : MonoBehaviour
 
 	void Update()
 	{
-		if (_moving || !_enemyCounterRef.enemiesInCounter) return;
+		if (_moving || !_enemyCounterRef.enemiesInCounter ) return;
 		_timer -= Time.deltaTime;
 		if (_timer <= 0)
 		{

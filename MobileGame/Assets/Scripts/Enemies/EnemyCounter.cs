@@ -4,11 +4,12 @@ using System.Collections.Generic;
 public class EnemyCounter : MonoBehaviour
 {
 	//TODO: Usar el EnemyCounter para ayudar al player a apuntar automaticamente
+	//y que dispare si hay enemigos en el enemyCounter activo
 
 	[SerializeField] private int _enemyCount = 1;
 	public bool enemiesInCounter = true;
 	public bool playerInCounter = false;
-	[SerializeField] private List<Enemy> _enemiesInCounter = new ();
+	[SerializeField] private List<Enemy> _enemiesInCounter = new();
 
 
 	private void OnTriggerEnter(Collider other)
@@ -49,3 +50,4 @@ public class EnemyCounter : MonoBehaviour
 
 
 }
+
