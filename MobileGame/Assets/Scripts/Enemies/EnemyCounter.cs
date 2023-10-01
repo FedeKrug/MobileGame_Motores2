@@ -1,25 +1,54 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemyCounter : MonoBehaviour
 {
-	[SerializeField] private int _enemyCant = 1;
-	public bool enemiesInLevel = true;
-	
+	[SerializeField] private int _enemyCount = 1;
+	public bool enemiesInCounter = true;
+	public bool playerInCounter = false;
+	[SerializeField] private List<Enemy> _enemiesInCounter = new ();
 
-	[ContextMenu("CheckEnemyCant")]
-	private void CheckEnemyCant()
+
+	private void OnTriggerEnter(Collider other)
 	{
-		//Funciona, pero solo si el enemigo sale fisicamente del trigger, no si se desactiva -> TODO: Revisar
-		if (_enemyCant <= 0 )
+		if (other.CompareTag("Enemy") && !_enemiesInCounter.Contains(other.GetComponent<Enemy>()))
 		{
-			enemiesInLevel = false;
-			//Recoger monedas y exp que hayan dropeado los enemigos
-			Debug.Log($"<color=yellow>No hay mas enemigos</color>");
+			_enemiesInCounter.Add(other.GetComponent<Enemy>());
+			_enemyCount++;
+			UpdateCounter();
 		}
+		if (other.CompareTag("Player"))
+		{
+			playerInCounter = true;
+		}
+
 	}
-	public void SubstractEnemy()
+
+	private void OnTriggerExit(Collider other)
 	{
-		_enemyCant--;
-		CheckEnemyCant();
+		if (other.CompareTag("Enemy") && _enemiesInCounter.Contains(other.GetComponent<Enemy>()))
+		{
+			_enemiesInCounter.Remove(other.GetComponent<Enemy>());
+			_enemyCount--;
+			UpdateCounter();
+		}
+		if (other.CompareTag("Player"))
+		{
+			playerInCounter = false;
+		}
+
 	}
+
+	private void UpdateCounter()
+	{
+		Debug.Log("Enemigos dentro del trigger: " + _enemyCount);
+		// Puedes ejecutar aquí cualquier acción adicional basada en el contador de enemigos.
+	}
+
+
+}
+
+public class TotalEnemyCounter : MonoBehaviour
+{
+
 }

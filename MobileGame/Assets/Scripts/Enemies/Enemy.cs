@@ -78,7 +78,7 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 
 	protected void Die()
 	{
-		counterRef.SubstractEnemy();
+		//counterRef.SubstractEnemy();
 		gameObject.SetActive(false);
 	}
 }

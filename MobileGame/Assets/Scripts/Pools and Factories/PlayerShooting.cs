@@ -26,7 +26,7 @@ public class PlayerShooting : MonoBehaviour
 
 	void Update()
 	{
-		if (_moving || !_enemyCounterRef.enemiesInLevel) return;
+		if (_moving || !_enemyCounterRef.enemiesInCounter) return;
 		_timer -= Time.deltaTime;
 		if (_timer <= 0)
 		{
