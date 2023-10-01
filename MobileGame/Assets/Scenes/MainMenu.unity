@@ -7443,7 +7443,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1038457012}
-  - component: {fileID: 1038457011}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -7451,25 +7450,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1038457011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038457010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3e7032740eadf418828bc7484f2512, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _menuCanvas:
-  - {fileID: 1964942185}
-  - {fileID: 1955807095}
-  - {fileID: 1850351303}
-  - {fileID: 208801140}
-  - {fileID: 1980203029}
-  _sliders: []
 --- !u!4 &1038457012
 Transform:
   m_ObjectHideFlags: 0
@@ -13008,6 +12988,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1473628209}
     m_Modifications:
+    - target: {fileID: 2483967742446966014, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
+      propertyPath: _sliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 1429322901}
+    - target: {fileID: 2483967742446966014, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
+      propertyPath: _sliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 730376805}
+    - target: {fileID: 2483967742446966014, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
+      propertyPath: _sliders.Array.data[2]
+      value: 
+      objectReference: {fileID: 914729937}
+    - target: {fileID: 2483967742446966014, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
+      propertyPath: _menuCanvas.Array.data[0]
+      value: 
+      objectReference: {fileID: 1964942185}
+    - target: {fileID: 2483967742446966014, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
+      propertyPath: _menuCanvas.Array.data[1]
+      value: 
+      objectReference: {fileID: 1955807095}
+    - target: {fileID: 2483967742446966014, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
+      propertyPath: _menuCanvas.Array.data[2]
+      value: 
+      objectReference: {fileID: 1850351303}
+    - target: {fileID: 2483967742446966014, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
+      propertyPath: _menuCanvas.Array.data[3]
+      value: 
+      objectReference: {fileID: 208801140}
+    - target: {fileID: 2483967742446966014, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
+      propertyPath: _menuCanvas.Array.data[4]
+      value: 
+      objectReference: {fileID: 1980203029}
     - target: {fileID: 4876704032854019695, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -13063,23 +13075,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6744397883822578738, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
   m_PrefabInstance: {fileID: 2483967742446966011}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2483967742446966013 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4876704032854019695, guid: 6a507e3b92243e142bfeeeb40f3e6ec0, type: 3}
-  m_PrefabInstance: {fileID: 2483967742446966011}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2483967742446966014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2483967742446966013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ff197f273251b246b0dd8b0f72b7cbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2690075728393036142
 PrefabInstance:
   m_ObjectHideFlags: 0

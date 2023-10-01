@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class PlayerShootingTest : MonoBehaviour
+public class PlayerShooting : MonoBehaviour
 {
 	[SerializeField] private Transform _shootingPoint;
 	[SerializeField] private bool _moving;
@@ -20,7 +20,7 @@ public class PlayerShootingTest : MonoBehaviour
 
 	void Start()
 	{
-		_maxTime = PlayerManager.instance.PlayerStats.atkCooldown;
+		_maxTime = GameManager.instance.PlayerStats.atkCooldown;
 		_timer = _maxTime;
 	}
 

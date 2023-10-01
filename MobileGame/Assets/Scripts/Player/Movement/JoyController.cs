@@ -12,7 +12,7 @@ public class JoyController : Controller, IDragHandler, IEndDragHandler
     float maxDistance = 200;
     [SerializeField] RectTransform baseImg = null;
 
-    [SerializeField] PlayerShootingTest _playerRef;
+    [SerializeField] PlayerShooting _playerRef;
 
     private void Start()
 {

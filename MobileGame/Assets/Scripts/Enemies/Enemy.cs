@@ -70,7 +70,7 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 
 	protected void CheckDeath()
 	{
-		if (_health >= 0)
+		if (_health <= 0)
 		{
 			Die();
 		}
