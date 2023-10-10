@@ -11,6 +11,11 @@ public class EnemyCounter : MonoBehaviour
 	public bool playerInCounter = false;
 	[SerializeField] private List<Enemy> _enemiesInCounter = new();
 
+	public int EnemyCount
+	{
+		get => _enemyCount;
+		set => _enemyCount = value;
+	}
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -42,10 +47,12 @@ public class EnemyCounter : MonoBehaviour
 
 	}
 
-	private void UpdateCounter()
+	private bool UpdateCounter()
 	{
 		Debug.Log("Enemigos dentro del trigger: " + _enemyCount);
 		// Puedes ejecutar aquí cualquier acción adicional basada en el contador de enemigos.
+		Debug.Log($"Player en el counter: {playerInCounter}  y enemigos en counter:{enemiesInCounter}");
+		return playerInCounter;
 	}
 
 

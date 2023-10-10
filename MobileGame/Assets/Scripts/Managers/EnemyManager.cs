@@ -24,16 +24,12 @@ public class EnemyManager : MonoBehaviour
 	[SerializeField] private EnemyCounter[] _enemyCounters;
 	public EnemyCounter activeCounter;
 
-	private void Update()
+	public EnemyCounter[] EnemyCounters
 	{
-		for (int i = 0; i < _enemyCounters.Length; i++)
-		{
-			if (_enemyCounters[i].playerInCounter)
-			{
-				_enemyCounters[i] = activeCounter;
-			}
-		}
+		get => _enemyCounters;
+		set => _enemyCounters = value;
 	}
+
 
 
 }
