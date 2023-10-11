@@ -28,9 +28,9 @@ public class EnemyCounterManager : MonoBehaviour
 	{
 		EnemyCounter activeEnemyCounter = FindClosestEnemyCounter();
 
-		if (activeEnemyCounter != null)
-		{
-			Debug.Log("El player se encuentra el " + activeEnemyCounter.name);
-		}
+		//if (activeEnemyCounter != null)
+		//{
+		//	Debug.Log("El player se encuentra el " + activeEnemyCounter.name);
+		//}
 	}
 }

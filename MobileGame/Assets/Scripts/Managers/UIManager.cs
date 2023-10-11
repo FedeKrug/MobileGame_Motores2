@@ -19,20 +19,32 @@ public class UIManager : MonoBehaviour
 	}
 	#endregion
 
-	[SerializeField] private IntSO _scoreCoins;
+	[SerializeField] private SaveData _saveData;
 	[SerializeField] private TextMeshProUGUI _scoreText;
+
+	public int Score
+	{
+		get => _saveData.coins;
+		set => _saveData.coins = value;
+	}
+	public SaveData SaveData
+	{
+		get => _saveData;
+		set => _saveData = value;
+	}
 
 	private void Start()
 	{
-		_scoreText.text = string.Format("Coins: {0:000}", _scoreCoins.value);
+		_scoreText.text = string.Format("Coins: {0:000}", _saveData.coins);
 	}
 	public void TakeCoins(int coinAmount)
 	{
-		_scoreCoins.value+= coinAmount;
+		_saveData.coins += coinAmount;
 		UpdateScoreText();
 	}
-	private void UpdateScoreText()
+	public void UpdateScoreText()
 	{
-		_scoreText.text = string.Format("Coins: {0:000}", _scoreCoins.value);
+		_scoreText.text = string.Format("Coins: {0:000}", _saveData.coins);
 	}
+
 }

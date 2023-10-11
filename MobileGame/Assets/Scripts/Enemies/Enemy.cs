@@ -15,6 +15,8 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 
 	[SerializeField] protected EnemyCounter counterRef;
 	[SerializeField] protected float _health;
+	[SerializeField] protected GameObject[] _objectsToDropWhenDead;
+	[SerializeField] protected 
 
 	Vector3 _velocity;
 	Vector3 _target;
@@ -82,5 +84,7 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 		//counterRef.SubstractEnemy();
 		_meshToTurnOff.SetActive(false);
 		transform.position = _deathPlace.position;
+		
+
 	}
 }

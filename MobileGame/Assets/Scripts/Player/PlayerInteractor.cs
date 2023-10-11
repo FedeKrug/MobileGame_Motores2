@@ -27,11 +27,7 @@ public class PlayerInteractor : MonoBehaviour
 	}
 	public void InteractWithObjects()
 	{
-
-		Debug.Log("Can't interact with Objects");
-
         if (_interactables.Count <= 0 || !_canInteract) return;
-		Debug.Log("Interact with Objects");
 		_interactables[_interactables.Count - 1]?.Interact();
 	}
 

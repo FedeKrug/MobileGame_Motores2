@@ -47,7 +47,6 @@ public class EnemyCounter : MonoBehaviour
 
 	private bool UpdateCounter()
 	{
-		Debug.Log("Enemigos dentro del trigger: " + _enemyCount);
 		if (_enemyCount <=0)
 		{
 			enemiesInCounter = false;

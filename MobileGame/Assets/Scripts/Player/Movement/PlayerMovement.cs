@@ -23,18 +23,18 @@ public class PlayerMovement : MonoBehaviour
 		Rotate();
 	}
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Return))
-		{
-			Debug.Log("Back");
-		}
+	//private void Update()
+	//{
+	//	if (Input.GetKeyDown(KeyCode.Return))
+	//	{
+	//		Debug.Log("Back");
+	//	}
 
-		if (Input.GetKeyDown(KeyCode.Menu))
-		{
-			Debug.Log("Menu");
-		}
-	}
+	//	if (Input.GetKeyDown(KeyCode.Menu))
+	//	{
+	//		Debug.Log("Menu");
+	//	}
+	//}
 
 	private void Rotate()
 	{

@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField] private Transform _playerPos;
 	[SerializeField] private PlayerStatsSO _playerStats;
-
+	[SerializeField] private IntSO _coinsAmount; 
 	public PlayerStatsSO PlayerStats
 	{
 		get => _playerStats;
@@ -31,6 +31,12 @@ public class GameManager : MonoBehaviour
 		set => _playerPos = value;
 	}
 
-
-	
+	private void Start()
+	{
+		UpdateCoinsAmountSO();
+	}
+	public void UpdateCoinsAmountSO()
+	{
+		_coinsAmount.value = UIManager.instance.Score;
+	}
 }

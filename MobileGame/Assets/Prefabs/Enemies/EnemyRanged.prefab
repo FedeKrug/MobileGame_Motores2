@@ -1354,6 +1354,7 @@ GameObject:
   - component: {fileID: 8652055194795468225}
   - component: {fileID: 8652055194795468254}
   - component: {fileID: 8652055194795468255}
+  - component: {fileID: 7597071325289999465}
   m_Layer: 3
   m_Name: EnemyRanged
   m_TagString: Enemy
@@ -1396,6 +1397,8 @@ MonoBehaviour:
   _meshToTurnOff: {fileID: 2369606496670541290}
   counterRef: {fileID: 0}
   _health: 10
+  _objectsToDropWhenDead: []
+  _velocity: {x: 0, y: 0, z: 0}
 --- !u!136 &8652055194795468225
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1448,6 +1451,21 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 2
+--- !u!114 &7597071325289999465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8652055194795468226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807edcae490e4dc4aa0fb75563b4f71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minDropAmount: 1
+  _maxDropAmount: 5
+  _objectsToDrop: []
 --- !u!1 &8726006930690693800
 GameObject:
   m_ObjectHideFlags: 0

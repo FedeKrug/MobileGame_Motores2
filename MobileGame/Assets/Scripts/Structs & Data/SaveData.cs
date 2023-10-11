@@ -10,5 +10,8 @@ public class SaveData
 	public string[] abilities;
 	public int lvl;
 
+	public int coins;
+
+
 	//TODO: Agregar todo lo que necesita ser guardado
 }

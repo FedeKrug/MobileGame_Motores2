@@ -8,14 +8,15 @@ public class Player_JSON : MonoBehaviour
 	private void Start()
 	{
 		string _newPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("\\", "/") + $"/{Application.productName}";
-
-		//_path = Application.persistentDataPath + "/data.json";
 		_path = _newPath + "/data.json";
 		Directory.CreateDirectory(_newPath);
+
+		
 	}
 
 	public void Save()
 	{
+		_data = UIManager.instance.SaveData;
 		Debug.Log($"<color=yellow>Saved Data</color>");
 		string jsonData = JsonUtility.ToJson(_data, true);
 		File.WriteAllText(_path, jsonData);
@@ -30,9 +31,12 @@ public class Player_JSON : MonoBehaviour
 			//Por si quiero guardar en caso de que no haya ninguna partida guardada y quiero cargar el juego
 			return;
 		}
+		_data = UIManager.instance.SaveData;
 		Debug.Log($"<color=yellow>Loaded Data</color>");
 		string jsonLoadData = File.ReadAllText(_path);
 		//_data =JsonUtility.FromJson<SaveData>(jsonLoadData); se usa para clases que heredan de Monobehaviour
 		JsonUtility.FromJsonOverwrite(jsonLoadData, _data);
+		UIManager.instance.UpdateScoreText();
+		GameManager.instance.UpdateCoinsAmountSO();
 	}
 }
