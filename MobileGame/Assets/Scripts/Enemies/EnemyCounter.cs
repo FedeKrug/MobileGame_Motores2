@@ -1,32 +1,59 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemyCounter : MonoBehaviour
 {
-	[SerializeField] private int _enemyCant = 1;
-	public bool enemiesInLevel = true;
+
+	[SerializeField] private int _enemyCount = 1;
+	public bool enemiesInCounter = true;
+	public bool playerInCounter = false;
+	[SerializeField] private List<Enemy> _enemiesInCounter = new();
+
+	public int EnemyCount
+	{
+		get => _enemyCount;
+		set => _enemyCount = value;
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag("Enemy") && !_enemiesInCounter.Contains(other.GetComponent<Enemy>()))
+		{
+			_enemiesInCounter.Add(other.GetComponent<Enemy>());
+			_enemyCount++;
+			UpdateCounter();
+		}
+		if (other.CompareTag("Player"))
+		{
+			playerInCounter = true;
+		}
+
+	}
+
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.GetComponent<Enemy>())
+		if (other.CompareTag("Enemy") && _enemiesInCounter.Contains(other.GetComponent<Enemy>()))
 		{
-			_enemyCant--;
-			CheckEnemyCant();
-
+			_enemiesInCounter.Remove(other.GetComponent<Enemy>());
+			_enemyCount--;
+			UpdateCounter();
 		}
+		if (other.CompareTag("Player"))
+		{
+			playerInCounter = false;
+		}
+
 	}
 
-	[ContextMenu("CheckEnemyCant")]
-	private void CheckEnemyCant()
+	private bool UpdateCounter()
 	{
-		//Funciona, pero solo si el enemigo sale fisicamente del trigger, no si se desactiva -> TODO: Revisar
-		if (_enemyCant <= 0)
+		if (_enemyCount <=0)
 		{
-			//Dejar de disparar
-
-			//Permitir el paso al siguiente nivel, si es que hay uno.
-			enemiesInLevel = false;
-			//Recoger monedas y exp que hayan dropeado los enemigos
-			Debug.Log($"<color=yellow>No hay mas enemigos</color>");
+			enemiesInCounter = false;
 		}
+		return playerInCounter;
 	}
+
 
 }
+

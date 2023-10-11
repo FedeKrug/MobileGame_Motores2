@@ -1,24 +1,23 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-
 
 public class CanvasManager : MonoBehaviour
 {
-	#region Singleton
 	public static CanvasManager instance;
-
 	private void Awake()
 	{
 		if (instance == null)
 		{
 			instance = this;
 		}
-		//else
-		//{
-		//Destroy(gameObject);
-		//}
+		else
+		{
+			Destroy(gameObject);
+		}
 	}
-	#endregion
+
+	#region CanvasManager
+	/*..............................................................CANVAS MANAGER..........................................*/
 	[Header("Screens")]
 	[SerializeField] private Canvas[] _menuCanvas;
 
@@ -57,7 +56,6 @@ public class CanvasManager : MonoBehaviour
 			}
 		}
 	}
-	
 
 	public void TurnOffMenus()
 	{
@@ -66,19 +64,7 @@ public class CanvasManager : MonoBehaviour
 			_menuCanvas[i].enabled = false;
 		}
 	}
+	#endregion
 
-	//public void DestroyMenus()
-	//{
-	//	for (int i = 0; i < _menuCanvas.Length; i++)
-	//	{
-	//		Destroy(_menuCanvas[i].gameObject);
-	//	}
-	//}
 
-	//TODO:Revisar si sirve esta funcion para el juego, si no sirve, borrarla
-	//public void GoalScreen()
-	//{
-	//	TurnOffMenus();
-	//	_menuCanvas[2].enabled = true; //posicion de goalCanvas = 2
-	//}
 }

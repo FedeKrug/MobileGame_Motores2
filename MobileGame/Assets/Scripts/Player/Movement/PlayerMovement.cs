@@ -7,14 +7,14 @@ public class PlayerMovement : MonoBehaviour
 {
 	[SerializeField] private Rigidbody _rb;
 	[SerializeField] private Controller _myController;
-	[SerializeField] PlayerShootingTest _shootingRef;
+	[SerializeField] PlayerShooting _shootingRef;
 
 	
 	private float _speed;
 
 	private void Start()
 	{
-		_speed = PlayerManager.instance.PlayerStats.movementSpeed;
+		_speed = GameManager.instance.PlayerStats.movementSpeed;
 	}
 	private void FixedUpdate()
 	{
@@ -23,18 +23,18 @@ public class PlayerMovement : MonoBehaviour
 		Rotate();
 	}
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Return))
-		{
-			Debug.Log("Back");
-		}
+	//private void Update()
+	//{
+	//	if (Input.GetKeyDown(KeyCode.Return))
+	//	{
+	//		Debug.Log("Back");
+	//	}
 
-		if (Input.GetKeyDown(KeyCode.Menu))
-		{
-			Debug.Log("Menu");
-		}
-	}
+	//	if (Input.GetKeyDown(KeyCode.Menu))
+	//	{
+	//		Debug.Log("Menu");
+	//	}
+	//}
 
 	private void Rotate()
 	{

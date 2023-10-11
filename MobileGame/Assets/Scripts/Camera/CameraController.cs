@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
 
 	private void Start()
 	{
-		_target = PlayerManager.instance.PlayerPos;
+		_target = GameManager.instance.PlayerPos;
 	}
 
 
