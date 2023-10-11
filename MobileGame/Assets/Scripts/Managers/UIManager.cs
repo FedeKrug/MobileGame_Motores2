@@ -1,8 +1,10 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using TMPro;
+
+using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+	#region Singleton
 	public static UIManager instance;
 	private void Awake()
 	{
@@ -15,56 +17,14 @@ public class UIManager : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
+	#endregion
 
-	#region CanvasManager
-	/*..............................................................CANVAS MANAGER..........................................*/
-	[Header("Screens")]
-	[SerializeField] private Canvas[] _menuCanvas;
-
-	[Header("Sliders")]
-	//[SerializeField, Range(0.0001f, 1f)] private float _initMusicVol = 0.0001f;
-	[SerializeField] private Slider[] _sliders;
-	//[SerializeField] private AsyncSceneLoader _asynSceneLoader;
-
+	[SerializeField] private int _score;
+	[SerializeField] private TextMeshProUGUI _scoreText;
 
 	private void Start()
 	{
-		//Debug.Log($"<color=#F34D0E>{_menuCanvas[0]} es el canvas numero 0.</color>");
-		for (int i = 0; i < _menuCanvas.Length; i++)
-		{
-			_menuCanvas[i].enabled = i == 0;
-		}
+		_scoreText.text = string.Format("Coins: {0:000}", _score);
 	}
-
-
-	public void EnableMenu(int menuToShow)
-	{
-		//if (_asynSceneLoader != null)
-		//{
-		//	if (_asynSceneLoader.IsAsyncLoading) return;
-
-		//}
-		for (int i = 0; i < _menuCanvas.Length; i++)
-		{
-			if (i == menuToShow)
-			{
-				_menuCanvas[i].enabled = true;
-			}
-			else if (i != menuToShow && _menuCanvas[i].enabled)
-			{
-				_menuCanvas[i].enabled = false;
-			}
-		}
-	}
-
-	public void TurnOffMenus()
-	{
-		for (int i = 0; i < _menuCanvas.Length; i++)
-		{
-			_menuCanvas[i].enabled = false;
-		}
-	}
-	#endregion
-
 
 }

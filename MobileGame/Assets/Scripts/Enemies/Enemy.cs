@@ -10,7 +10,8 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 	[SerializeField] private bool _testBool;
 	[SerializeField] private float maxVelocity;
 	[SerializeField] private float maxSpeed;
-
+	[SerializeField] private Transform _deathPlace;
+	[SerializeField] private GameObject _meshToTurnOff;
 
 	[SerializeField] protected EnemyCounter counterRef;
 	[SerializeField] protected float _health;
@@ -79,6 +80,7 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 	protected void Die()
 	{
 		//counterRef.SubstractEnemy();
-		gameObject.SetActive(false);
+		_meshToTurnOff.SetActive(false);
+		transform.position = _deathPlace.position;
 	}
 }

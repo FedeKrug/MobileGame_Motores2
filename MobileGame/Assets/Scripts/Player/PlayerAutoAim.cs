@@ -17,23 +17,11 @@ public class PlayerAutoAim : MonoBehaviour
 		//if (_playerShootingRef.Moving || !EnemyManager.instance.activeCounter.enemiesInCounter ) return;
 		
 		closestEnemy = FindClosestEnemy();
-		// Si hay un enemigo cercano, apuntamos al enemigo y disparamos.
+		
 		if (closestEnemy != null)
 		{
-			// Apuntamos al enemigo.
-			transform.LookAt(closestEnemy.transform.position);
-
-			// Disparamos al enemigo.
-			Fire();
+			transform.LookAt(new Vector3(closestEnemy.transform.position.x, transform.position.y, closestEnemy.transform.position.z));
 		}
-	}
-
-	// Dispara un proyectil.
-	private void Fire()
-	{
-		//PlayerShooting se va a encargar de eso  
-		//_playerShootingRef.Shoot();
-		Debug.Log("Shoot from Player Auto Aim");
 	}
 
 	private Enemy FindClosestEnemy()
