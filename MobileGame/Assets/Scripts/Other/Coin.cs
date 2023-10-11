@@ -8,5 +8,6 @@ public class Coin : MonoBehaviour, Collectable
 	public void Collect()
 	{
 		UIManager.instance.TakeCoins(_score);
+		Destroy(gameObject);
 	}
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,8 +15,9 @@ public class PlayerInteractor : MonoBehaviour
 		_interactableButtonIndicator.enabled = true;
 		_interactables.Add(interactable);
 		_canInteract = true;
-		//other.GetComponent<Interactable>().Interact();
+		
 	}
+	
 	private void OnTriggerExit(Collider other)
 	{
 		var interactable = other.GetComponent<Interactable>();
@@ -23,7 +25,7 @@ public class PlayerInteractor : MonoBehaviour
         _interactableButtonIndicator.enabled = false;
 		_interactables.Remove(interactable);
 		_canInteract = false;
-		//other.GetComponent<Interactable>().Interact();
+	
 	}
 	public void InteractWithObjects()
 	{

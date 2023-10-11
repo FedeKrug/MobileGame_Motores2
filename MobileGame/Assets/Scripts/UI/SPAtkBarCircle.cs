@@ -7,6 +7,8 @@ public class SPAtkBarCircle : MonoBehaviour
 	[SerializeField] private Image _spBar;
 	[SerializeField] private float _maxMana = 1500;
 	private float _currentMana = 0;
+	private bool _canShoot = false;
+
 	private void Start()
 	{
 		_spBar.fillAmount = _currentMana;
@@ -23,6 +25,14 @@ public class SPAtkBarCircle : MonoBehaviour
 		if (_currentMana >= _maxMana)
 		{
 			_currentMana = _maxMana;
+			_canShoot = true;
 		}
 	}
+
+	public void ShootSpecialAttack()
+	{
+		if (!_canShoot) return;
+		Debug.Log("Special Shoot");
+	}
+
 }

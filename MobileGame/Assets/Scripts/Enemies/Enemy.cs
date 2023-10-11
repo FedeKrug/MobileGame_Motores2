@@ -84,7 +84,7 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 		//counterRef.SubstractEnemy();
 		_meshToTurnOff.SetActive(false);
 		transform.position = _deathPlace.position;
-		
+		GameManager.instance.SpAttackRef.IncreaseManaAmount(_health);
 
 	}
 }

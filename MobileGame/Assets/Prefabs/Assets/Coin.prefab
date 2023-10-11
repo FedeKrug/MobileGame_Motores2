@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8774567433063343800}
   - component: {fileID: 7676416218372438836}
   - component: {fileID: 4721520744195170039}
-  m_Layer: 0
+  - component: {fileID: 6430676070047284057}
+  m_Layer: 8
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,10 +108,23 @@ Animation:
   m_GameObject: {fileID: 1177541165076663029}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 9e3967c25544e7c4789655bbbd3a845c, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: 9e3967c25544e7c4789655bbbd3a845c, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &6430676070047284057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177541165076663029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9251827e632b4bf4ba8f194357be584d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 10
