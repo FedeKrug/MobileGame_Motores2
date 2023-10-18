@@ -132,6 +132,7 @@ MonoBehaviour:
   _speed: 25
   _maxDistance: 20
   _currentDistance: 0
+  _damage: 20
 --- !u!136 &4057519091527910617
 CapsuleCollider:
   m_ObjectHideFlags: 0

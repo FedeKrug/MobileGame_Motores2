@@ -12,6 +12,7 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 	[SerializeField] private float maxSpeed;
 	[SerializeField] private Transform _deathPlace;
 	[SerializeField] private GameObject _meshToTurnOff;
+	[SerializeField] protected int _manaCharge;
 
 	[SerializeField] protected EnemyCounter counterRef;
 	[SerializeField] protected float _health;
@@ -84,7 +85,7 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 		//counterRef.SubstractEnemy();
 		_meshToTurnOff.SetActive(false);
 		transform.position = _deathPlace.position;
-		GameManager.instance.SpAttackRef.IncreaseManaAmount(_health);
+		GameManager.instance.SpAttackRef.IncreaseManaAmount(_manaCharge);
 
 	}
 }

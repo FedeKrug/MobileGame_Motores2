@@ -5,7 +5,10 @@ public class SPAtkBarCircle : MonoBehaviour
 {
 
 	[SerializeField] private Image _spBar;
-	[SerializeField] private float _maxMana = 1500;
+	[SerializeField] private float _maxMana = 150;
+	[SerializeField] private GameObject _superProjectile;
+
+
 	private float _currentMana = 0;
 	private bool _canShoot = false;
 

@@ -1395,6 +1395,7 @@ MonoBehaviour:
   maxSpeed: 1
   _deathPlace: {fileID: 0}
   _meshToTurnOff: {fileID: 2369606496670541290}
+  _manaCharge: 60
   counterRef: {fileID: 0}
   _health: 10
   _objectsToDropWhenDead: []

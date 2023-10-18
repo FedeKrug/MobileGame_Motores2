@@ -4247,6 +4247,10 @@ PrefabInstance:
       propertyPath: _deathPlace
       value: 
       objectReference: {fileID: 2137183454}
+    - target: {fileID: 8652055194795468227, guid: c861b854191527143a36a1c3036db191, type: 3}
+      propertyPath: _manaCharge
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c861b854191527143a36a1c3036db191, type: 3}
 --- !u!1001 &269070604
@@ -14810,7 +14814,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1132993737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16640,7 +16644,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spBar: {fileID: 1301729394}
-  _maxMana: 1500
+  _maxMana: 150
+  _superProjectile: {fileID: 7589471255087343236, guid: 7783252fefd646a469e0ec9172d9304e, type: 3}
 --- !u!1 &1305367795
 GameObject:
   m_ObjectHideFlags: 0
@@ -19713,6 +19718,10 @@ PrefabInstance:
       propertyPath: _deathPlace
       value: 
       objectReference: {fileID: 2137183454}
+    - target: {fileID: 8652055194795468227, guid: c861b854191527143a36a1c3036db191, type: 3}
+      propertyPath: _manaCharge
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c861b854191527143a36a1c3036db191, type: 3}
 --- !u!1 &1507889375
@@ -23716,7 +23725,7 @@ MonoBehaviour:
   _playerPos: {fileID: 711103225}
   _playerStats: {fileID: 11400000, guid: 5e35274ceb53395449233ba1e9402e92, type: 2}
   _coinsAmount: {fileID: 11400000, guid: 5f6fb2e016c9d1642bd7da84524dfea4, type: 2}
-  _spAttackRef: {fileID: 0}
+  _spAttackRef: {fileID: 1301729396}
 --- !u!114 &1780265652
 MonoBehaviour:
   m_ObjectHideFlags: 0
