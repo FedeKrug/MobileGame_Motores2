@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,8 +13,7 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 
 	[SerializeField] protected EnemyCounter counterRef;
 	[SerializeField] protected float _health;
-	[SerializeField] protected GameObject[] _objectsToDropWhenDead;
-	[SerializeField] protected 
+	[SerializeField] protected EnemyDeathDrop _dropRef;
 
 	Vector3 _velocity;
 	Vector3 _target;
@@ -82,10 +78,10 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 
 	protected void Die()
 	{
-		//counterRef.SubstractEnemy();
 		_meshToTurnOff.SetActive(false);
-		transform.position = _deathPlace.position;
+		Vector3 lastPos = new(transform.position.x, 1.5f, transform.position.z);
+		_dropRef.DropObjects(lastPos);
 		GameManager.instance.SpAttackRef.IncreaseManaAmount(_manaCharge);
-
+		transform.position = _deathPlace.position;
 	}
 }

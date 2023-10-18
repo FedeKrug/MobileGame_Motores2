@@ -27,7 +27,6 @@ public class EnemyCounter : MonoBehaviour
 		{
 			playerInCounter = true;
 		}
-
 	}
 
 	private void OnTriggerExit(Collider other)
@@ -47,7 +46,7 @@ public class EnemyCounter : MonoBehaviour
 
 	private bool UpdateCounter()
 	{
-		if (_enemyCount <=0)
+		if (_enemyCount <= 0)
 		{
 			enemiesInCounter = false;
 		}

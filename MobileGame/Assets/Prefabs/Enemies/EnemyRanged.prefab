@@ -1398,8 +1398,7 @@ MonoBehaviour:
   _manaCharge: 60
   counterRef: {fileID: 0}
   _health: 10
-  _objectsToDropWhenDead: []
-  _velocity: {x: 0, y: 0, z: 0}
+  _dropRef: {fileID: 7597071325289999465}
 --- !u!136 &8652055194795468225
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1466,7 +1465,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minDropAmount: 1
   _maxDropAmount: 5
-  _objectsToDrop: []
+  _objectsToDrop:
+  - {fileID: 1177541165076663029, guid: 36c487fb35831d94eab6dafc5fbb5aea, type: 3}
+  - {fileID: 8131432372990651020, guid: 17ff938d5f140c4458d46bf0b8e97dad, type: 3}
+  - {fileID: 1177541165076663029, guid: 36c487fb35831d94eab6dafc5fbb5aea, type: 3}
 --- !u!1 &8726006930690693800
 GameObject:
   m_ObjectHideFlags: 0

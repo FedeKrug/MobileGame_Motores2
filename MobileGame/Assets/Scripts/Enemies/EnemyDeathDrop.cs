@@ -13,13 +13,14 @@ public class EnemyDeathDrop : MonoBehaviour
 		_enemyRef = GetComponentInParent<Enemy>();
 	}
 
-	public void DropObjects()
+	public void DropObjects(Vector3 dropPosition)
 	{
 		for (int i =0; i< Random.Range(_minDropAmount, _maxDropAmount); i++)
 		{
-			Instantiate(_objectsToDrop[Random.Range(0, _objectsToDrop.Length)], transform.position, transform.rotation);
+		//_enemyRef.transform.DetachChildren();
+			Instantiate(_objectsToDrop[Random.Range(0, _objectsToDrop.Length)], dropPosition, transform.rotation);
+			
 		}
-		_enemyRef.transform.DetachChildren();
 	}
 
 }

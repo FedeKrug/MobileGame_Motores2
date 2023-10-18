@@ -36,6 +36,8 @@ public class SPAtkBarCircle : MonoBehaviour
 	{
 		if (!_canShoot) return;
 		Debug.Log("Special Shoot");
+		Instantiate(_superProjectile);
+		_currentMana = 0;
 	}
 
 }
