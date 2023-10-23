@@ -9,9 +9,8 @@ public class Player_JSON : MonoBehaviour
 	{
 		string _newPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("\\", "/") + $"/{Application.productName}";
 		_path = _newPath + "/data.json";
+		Debug.Log(_newPath);
 		Directory.CreateDirectory(_newPath);
-
-		
 	}
 
 	public void Save()
@@ -21,7 +20,7 @@ public class Player_JSON : MonoBehaviour
 		string jsonData = JsonUtility.ToJson(_data, true);
 		File.WriteAllText(_path, jsonData);
 	}
-	[ContextMenu("LoadData")]
+
 	public void LoadData()
 	{
 		if (!File.Exists(_path))
@@ -37,6 +36,17 @@ public class Player_JSON : MonoBehaviour
 		//_data =JsonUtility.FromJson<SaveData>(jsonLoadData); se usa para clases que heredan de Monobehaviour
 		JsonUtility.FromJsonOverwrite(jsonLoadData, _data);
 		UIManager.instance.LoadDataUI();
-		
+
+	}
+
+	[ContextMenu("Clear Data ")]
+	public void ClearData()
+	{
+		SaveData emptyData = new();
+		Debug.Log($"<color=yellow>Clear Data</color>");
+		_data = emptyData;
+		string jsonData = JsonUtility.ToJson(_data, true);
+		File.WriteAllText(_path, jsonData);
+
 	}
 }
