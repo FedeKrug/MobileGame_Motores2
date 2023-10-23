@@ -1,5 +1,5 @@
 ﻿using TMPro;
-
+using UnityEngine.UI;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
 
 	[SerializeField] private SaveData _saveData;
 	[SerializeField] private TextMeshProUGUI _scoreText;
+	[SerializeField] private Image _healthBar;
 
 	public int Score
 	{
@@ -44,7 +45,25 @@ public class UIManager : MonoBehaviour
 	}
 	public void UpdateScoreText()
 	{
+		if (_saveData.coins <= 0)
+		{
+			_saveData.coins = 0;
+		}
 		_scoreText.text = string.Format("Coins: {0:000}", _saveData.coins);
 	}
+	public void UpdateLife()
+	{
+		if (_saveData.life <= 0)
+		{
+			_saveData.life = 0;
+		}
+		_healthBar.fillAmount = _saveData.life / GameManager.instance.PlayerHealth.MaxHealth;
+	}
 
+	public void LoadDataUI()
+	{
+		UpdateLife();
+		UpdateScoreText();
+		GameManager.instance.UpdateCoinsAmountSO();
+	}
 }

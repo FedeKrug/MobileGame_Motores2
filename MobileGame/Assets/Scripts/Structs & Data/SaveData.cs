@@ -6,7 +6,8 @@ using System.IO;
 [Serializable]
 public class SaveData
 {
-	public int life;
+	public float life = 100;
+	public float mana;
 	public string[] abilities;
 	public int lvl;
 

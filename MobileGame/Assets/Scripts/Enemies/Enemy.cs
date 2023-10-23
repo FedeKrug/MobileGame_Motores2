@@ -65,6 +65,10 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 	public void TakeDamage(float damage)
 	{
 		_health -= damage;
+		/*
+		 Feedback de daño
+		 */
+
 		CheckDeath();
 	}
 
