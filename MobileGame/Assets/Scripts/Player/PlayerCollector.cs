@@ -11,7 +11,7 @@ public class PlayerCollector : MonoBehaviour
 	}
 	private void Update()
 	{
-		_canCollect = !_playerShootingRef.EnemyCounterRef.enemiesInCounter;
+		_canCollect = !_playerShootingRef.EnemyCounterRef.areThereEnemiesInCounter;
 	}
 	private void OnTriggerEnter(Collider other)
 	{

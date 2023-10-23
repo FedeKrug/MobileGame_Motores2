@@ -5,7 +5,7 @@ public class EnemyCounter : MonoBehaviour
 {
 
 	[SerializeField] private int _enemyCount = 1;
-	public bool enemiesInCounter = true;
+	public bool areThereEnemiesInCounter = true;
 	public bool playerInCounter = false;
 	[SerializeField] private List<Enemy> _enemiesInCounter = new();
 
@@ -13,6 +13,10 @@ public class EnemyCounter : MonoBehaviour
 	{
 		get => _enemyCount;
 		set => _enemyCount = value;
+	}
+	public List<Enemy> EnemiesInCounter { 
+		get => _enemiesInCounter; 
+		set => _enemiesInCounter = value;
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -48,7 +52,7 @@ public class EnemyCounter : MonoBehaviour
 	{
 		if (_enemyCount <= 0)
 		{
-			enemiesInCounter = false;
+			areThereEnemiesInCounter = false;
 		}
 		return playerInCounter;
 	}

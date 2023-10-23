@@ -2,15 +2,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-	/// <summary>
-	/// PlayerHealth: 
-	/// Determinar condicion de derrota
-	/// TakeDamage
-	/// IncreaseHealth
-	/// 
-	/// </summary>
-	[SerializeField]private float _maxHealth;
-	
+	private float _maxHealth;
+
 
 	public float MaxHealth
 	{
@@ -29,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		UIManager.instance.SaveData.life -= damage;
 		CheckDeath();
-		
+
 	}
 
 	private void CheckDeath()

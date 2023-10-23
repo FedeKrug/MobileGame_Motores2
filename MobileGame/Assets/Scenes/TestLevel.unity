@@ -1348,7 +1348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &74388379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9713,7 +9713,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd177c2886190094eb11f5531adeaaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemiesTotalAmount: []
+  _enemiesTotalAmount:
+  - {fileID: 8652055194795468227, guid: c861b854191527143a36a1c3036db191, type: 3}
+  _playerShootingRef: {fileID: 711103224}
 --- !u!114 &711103227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9726,7 +9728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e0ba4e51d0a7c41a5be44dfccd2e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 0
 --- !u!1 &712124100
 GameObject:
   m_ObjectHideFlags: 0
@@ -14688,7 +14689,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1132993736
 RectTransform:
@@ -16147,7 +16148,7 @@ PrefabInstance:
     - target: {fileID: 5925412002712981872, guid: 4c8f1ebcc4743214589c39e515ac462c, type: 3}
       propertyPath: _enemiesInCounter.Array.data[0]
       value: 
-      objectReference: {fileID: 1525817581}
+      objectReference: {fileID: 0}
     - target: {fileID: 5925412002712981875, guid: 4c8f1ebcc4743214589c39e515ac462c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -19963,7 +19964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1535876293
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25474,6 +25475,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5925412002712981872, guid: 4c8f1ebcc4743214589c39e515ac462c, type: 3}
+      propertyPath: areThereEnemiesInCounter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925412002712981872, guid: 4c8f1ebcc4743214589c39e515ac462c, type: 3}
       propertyPath: _enemiesInCounter.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -30338,6 +30343,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5925412002712981872, guid: 4c8f1ebcc4743214589c39e515ac462c, type: 3}
       propertyPath: enemiesInCounter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925412002712981872, guid: 4c8f1ebcc4743214589c39e515ac462c, type: 3}
+      propertyPath: areThereEnemiesInCounter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925412002712981872, guid: 4c8f1ebcc4743214589c39e515ac462c, type: 3}
+      propertyPath: _enemiesInCounter.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5925412002712981872, guid: 4c8f1ebcc4743214589c39e515ac462c, type: 3}

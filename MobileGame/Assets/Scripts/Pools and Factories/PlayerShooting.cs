@@ -33,7 +33,7 @@ public class PlayerShooting : MonoBehaviour
 
 	void Update()
 	{
-		_canAim = !_moving && _enemyCounterRef.enemiesInCounter;
+		_canAim = !_moving && _enemyCounterRef.areThereEnemiesInCounter;
 		if (!_canAim)
 		{
 			_playerAim.enabled = false;

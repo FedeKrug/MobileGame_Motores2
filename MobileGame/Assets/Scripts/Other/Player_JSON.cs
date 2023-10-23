@@ -9,7 +9,6 @@ public class Player_JSON : MonoBehaviour
 	{
 		string _newPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("\\", "/") + $"/{Application.productName}";
 		_path = _newPath + "/data.json";
-		Debug.Log(_newPath);
 		Directory.CreateDirectory(_newPath);
 	}
 
