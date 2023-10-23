@@ -16307,6 +16307,7 @@ MonoBehaviour:
   _spBar: {fileID: 1301729394}
   _maxMana: 150
   _superProjectile: {fileID: 7589471255087343236, guid: 7783252fefd646a469e0ec9172d9304e, type: 3}
+  _playerShootingRef: {fileID: 711103224}
 --- !u!1 &1305367795
 GameObject:
   m_ObjectHideFlags: 0

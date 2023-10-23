@@ -44,14 +44,13 @@ public class PlayerShooting : MonoBehaviour
 
 		if (_timer <= 0)
 		{
-			Shoot();
+			Shoot(ProjectileFactory.instance.pool.GetObject().gameObject);
 		}
 	}
 
-	public void Shoot()
+	public void Shoot(GameObject projectile)
 	{
-		MagicProjectile projectileRef = ProjectileFactory.instance.pool.GetObject();
-		projectileRef.transform.SetPositionAndRotation(_shootingPoint.position, transform.rotation);
+		projectile.transform.SetPositionAndRotation(_shootingPoint.position, transform.rotation);
 		_timer = _maxTime;
 	}
 
