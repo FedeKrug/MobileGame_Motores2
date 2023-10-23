@@ -44,6 +44,10 @@ public class UIManager : MonoBehaviour
 	}
 	public void UpdateScoreText()
 	{
+		if (_saveData.coins <= 0)
+		{
+			_saveData.coins = 0;
+		}
 		_scoreText.text = string.Format("Coins: {0:000}", _saveData.coins);
 	}
 
