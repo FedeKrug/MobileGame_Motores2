@@ -36,7 +36,7 @@ public class Player_JSON : MonoBehaviour
 		string jsonLoadData = File.ReadAllText(_path);
 		//_data =JsonUtility.FromJson<SaveData>(jsonLoadData); se usa para clases que heredan de Monobehaviour
 		JsonUtility.FromJsonOverwrite(jsonLoadData, _data);
-		UIManager.instance.UpdateScoreText();
-		GameManager.instance.UpdateCoinsAmountSO();
+		UIManager.instance.LoadDataUI();
+		
 	}
 }
