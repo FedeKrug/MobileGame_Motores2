@@ -17203,6 +17203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canCollect: 0
+  _playerShootingRef: {fileID: 711103224}
 --- !u!1001 &1358840487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23253,6 +23254,7 @@ MonoBehaviour:
   _playerStats: {fileID: 11400000, guid: 5e35274ceb53395449233ba1e9402e92, type: 2}
   _coinsAmount: {fileID: 11400000, guid: 5f6fb2e016c9d1642bd7da84524dfea4, type: 2}
   _spAttackRef: {fileID: 1301729396}
+  _playerCollector: {fileID: 1353008273}
 --- !u!114 &1780265652
 MonoBehaviour:
   m_ObjectHideFlags: 0

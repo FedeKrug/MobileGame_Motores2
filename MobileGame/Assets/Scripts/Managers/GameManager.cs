@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private PlayerStatsSO _playerStats;
 	[SerializeField] private IntSO _coinsAmount;
 	[SerializeField] private SPAtkBarCircle _spAttackRef;
-
+	[SerializeField] private PlayerCollector _playerCollector;
 	public PlayerStatsSO PlayerStats
 	{
 		get => _playerStats;
@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour
 	{
 		get => _spAttackRef;
 		set => _spAttackRef = value;
+	}
+	public PlayerCollector PlayerCollector
+	{
+		get => _playerCollector;
+		set => _playerCollector = value;
 	}
 
 	private void Start()
