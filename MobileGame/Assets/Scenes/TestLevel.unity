@@ -14664,13 +14664,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1101883056}
   - component: {fileID: 1101883057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1101883056
 Transform:
   m_ObjectHideFlags: 0
@@ -14694,11 +14694,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101883055}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.3244247, y: 4.648991, z: 1.0135174}
-  m_Center: {x: 2.3739986, y: 1.8244951, z: 1.0805483}
+  m_Size: {x: 4.3244247, y: 4.648991, z: 2.9571342}
+  m_Center: {x: 2.3739986, y: 1.8244951, z: 0.10873985}
 --- !u!1 &1107471104
 GameObject:
   m_ObjectHideFlags: 0
