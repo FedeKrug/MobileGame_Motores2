@@ -219,14 +219,14 @@ MonoBehaviour:
           m_StringArgument: TestLevel
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 61415c94fbf51194e8b94ffca6b95ab3, type: 3}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 855698313}
+        m_TargetAssemblyTypeName: StamineSystem, Assembly-CSharp
+        m_MethodName: UseStamina
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6265,7 +6265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxStamina: 10
   timeToRecharge: 10
-  staminaText: {fileID: 1300485651}
+  staminaText: {fileID: 1337173813}
   timerText: {fileID: 1265453606}
 --- !u!1 &870425709
 GameObject:
@@ -8978,7 +8978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1300485650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9277,6 +9277,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e61ff92c1741cd43aaf55c8a3edd631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1337173813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5744313041051954223, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
+  m_PrefabInstance: {fileID: 5744313042024370863}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1341464481
@@ -13731,7 +13742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5744313041051954223, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
       propertyPath: m_text
-      value: 5/10
+      value: 10/10
       objectReference: {fileID: 0}
     - target: {fileID: 5744313041051954223, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
       propertyPath: m_HorizontalAlignment
