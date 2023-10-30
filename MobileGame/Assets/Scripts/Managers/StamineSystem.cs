@@ -23,7 +23,7 @@ public class StamineSystem : MonoBehaviour
             Save();
         }
         Load();
-        currentStamina = maxStamina;
+        //currentStamina = maxStamina;
         UpdateStaminaUI();
         UpdateTimerUI();
 
@@ -100,6 +100,7 @@ public class StamineSystem : MonoBehaviour
     {
         currentStamina += staminaToAdd;
         UpdateStaminaUI();
+        UpdateTimerUI();
         Save();
     }
 
@@ -112,7 +113,7 @@ public class StamineSystem : MonoBehaviour
     {
         if(currentStamina >= maxStamina)
         {
-            timerText.text = "FULL";
+            timerText.text = "";
             return;
         }
 
