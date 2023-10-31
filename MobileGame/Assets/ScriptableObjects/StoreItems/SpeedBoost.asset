@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f1fc37ffd8958458f9842a05d34d87, type: 3}
+  m_Name: SpeedBoost
+  m_EditorClassIdentifier: 
+  itemName: SpeedBoost
+  itemDescription: You'll move faster with this!!
+  itemPrice: 80
+  itemSprite: {fileID: 21300000, guid: 1b2ad82ec9519c6478f614979f9eca1c, type: 3}

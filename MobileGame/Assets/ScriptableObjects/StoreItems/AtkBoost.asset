@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f1fc37ffd8958458f9842a05d34d87, type: 3}
+  m_Name: AtkBoost
+  m_EditorClassIdentifier: 
+  itemName: ATKBoost
+  itemDescription: You'll attack harder with this!!
+  itemPrice: 50
+  itemSprite: {fileID: 21300000, guid: 3d8c3b3d3a7099947bdbccd1532ef2b4, type: 3}
