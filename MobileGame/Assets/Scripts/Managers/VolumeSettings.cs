@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-using UnityEditor.iOS;
+//using UnityEditor.iOS;
 
 public class VolumeSettings : MonoBehaviour
 {
