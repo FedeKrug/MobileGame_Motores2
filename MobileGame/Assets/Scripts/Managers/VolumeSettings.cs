@@ -25,6 +25,13 @@ public class VolumeSettings : MonoBehaviour
 		_mixer.SetFloat("SfxVolume", Mathf.Log10(volume) * 20);
 	}
 
+	public void MuteAudio()
+	{
+		_sfxVolumeSlider.value = 0.00001f;
+		 _musicVolumeSlider.value = 0.00001f;
+		_masterVolumeSlider.value = 0.00001f;
+	}
+
 
 	public void PlayAudio(AudioClip clip)
 	{
