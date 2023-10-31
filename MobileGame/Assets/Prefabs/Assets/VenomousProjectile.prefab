@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7589471255087343239}
   - component: {fileID: 4057519091527910617}
   m_Layer: 0
-  m_Name: BigProjectile
+  m_Name: VenomousProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -20,7 +20,7 @@ public abstract class MagicProjectile : MonoBehaviour
 		_currentDistance = 0;
 	}
 
-	protected void OnTriggerEnter(Collider other)
+	protected virtual void OnTriggerEnter(Collider other)
 	{
 		Enemy enemyRef = other.gameObject.GetComponent<Enemy>();
 

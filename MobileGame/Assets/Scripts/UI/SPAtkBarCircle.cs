@@ -35,7 +35,7 @@ public class SPAtkBarCircle : MonoBehaviour
 			_canShoot = false;
 		}
 	}
-
+	[ContextMenu("Update Mana Amount")]
 	public void UpdateManaAmount()
 	{
 		_spBar.fillAmount = _currentMana / _maxMana;

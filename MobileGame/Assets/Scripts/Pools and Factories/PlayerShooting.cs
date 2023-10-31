@@ -50,7 +50,7 @@ public class PlayerShooting : MonoBehaviour
 
 	public void Shoot(GameObject projectile)
 	{
-		projectile.transform.SetPositionAndRotation(_shootingPoint.position, transform.rotation);
+		projectile.transform.SetPositionAndRotation(_shootingPoint.position, _shootingPoint.rotation);
 		_timer = _maxTime;
 	}
 
