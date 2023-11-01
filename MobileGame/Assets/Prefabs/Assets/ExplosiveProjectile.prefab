@@ -4948,14 +4948,15 @@ MonoBehaviour:
   _maxDistance: 500
   _currentDistance: 0
   _damage: 30
-  _explosionEffect: {fileID: 0}
+  _explosionEffect: {fileID: 4098058294035696864}
   _aSource: {fileID: 6275500195374465232}
-  _explosionSound: {fileID: 0}
-  _explosionForce: 0
-  _explosionRadius: 0
-  _explosionMod: 0
-  _explosionDuration: 0
-  _rb: {fileID: 0}
+  _explosionSound: {fileID: 8300000, guid: 828dda09b25059146b37c6de74ccf3ae, type: 3}
+  _spellMesh: {fileID: 7589471254006937811}
+  _explosionForce: 3
+  _explosionRadius: 3
+  _explosionMod: 0.5
+  _explosionDuration: 3
+  _rb: {fileID: 2012876194913422419}
 --- !u!136 &4057519091527910617
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4966,10 +4967,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.51118493
-  m_Height: 2.0490987
+  m_Radius: 1.1969316
+  m_Height: 3.8350384
   m_Direction: 2
-  m_Center: {x: 0, y: 0.014224401, z: -0.018699287}
+  m_Center: {x: -2.9735403e-10, y: 0.014224402, z: -0.018699292}
 --- !u!54 &2012876194913422419
 Rigidbody:
   m_ObjectHideFlags: 0
