@@ -7,23 +7,23 @@ public class EnemyCounter : MonoBehaviour
 	[SerializeField] private int _enemyCount = 1;
 	public bool areThereEnemiesInCounter = true;
 	public bool playerInCounter = false;
-	[SerializeField] private List<Enemy> _enemiesInCounter = new();
+	[SerializeField] private List<EnemyHealth> _enemiesInCounter = new();
 
 	public int EnemyCount
 	{
 		get => _enemyCount;
 		set => _enemyCount = value;
 	}
-	public List<Enemy> EnemiesInCounter { 
+	public List<EnemyHealth> EnemiesInCounter { 
 		get => _enemiesInCounter; 
 		set => _enemiesInCounter = value;
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Enemy") && !_enemiesInCounter.Contains(other.GetComponent<Enemy>()))
+		if (other.CompareTag("Enemy") && !_enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
 		{
-			_enemiesInCounter.Add(other.GetComponent<Enemy>());
+			_enemiesInCounter.Add(other.GetComponent<EnemyHealth>());
 			_enemyCount++;
 			UpdateCounter();
 		}
@@ -35,9 +35,9 @@ public class EnemyCounter : MonoBehaviour
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.CompareTag("Enemy") && _enemiesInCounter.Contains(other.GetComponent<Enemy>()))
+		if (other.CompareTag("Enemy") && _enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
 		{
-			_enemiesInCounter.Remove(other.GetComponent<Enemy>());
+			_enemiesInCounter.Remove(other.GetComponent<EnemyHealth>());
 			_enemyCount--;
 			UpdateCounter();
 		}

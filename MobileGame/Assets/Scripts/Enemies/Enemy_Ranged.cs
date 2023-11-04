@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Ranged : Enemy
+public class Enemy_Ranged : EnemyBehaviour
 {
 
 }

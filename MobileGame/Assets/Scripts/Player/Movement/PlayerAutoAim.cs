@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerAutoAim : MonoBehaviour
 {
-	[SerializeField] private Enemy[] _enemiesTotalAmount;
+	[SerializeField] private EnemyHealth[] _enemiesTotalAmount;
 	[SerializeField] private PlayerShooting _playerShootingRef;
 
-	private Enemy closestEnemy;
+	private EnemyHealth closestEnemy;
 	
 	private void OnEnable()
 	{
@@ -26,7 +26,7 @@ public class PlayerAutoAim : MonoBehaviour
 		}
 	}
 
-	private Enemy FindClosestEnemy()
+	private EnemyHealth FindClosestEnemy()
 	{
 		for (int i =0; i<_enemiesTotalAmount.Length; i++)
 		{
@@ -36,7 +36,7 @@ public class PlayerAutoAim : MonoBehaviour
 
 		// Encuentra el enemigo más cercano al jugador.
 		float closestDistance = float.MaxValue;
-		Enemy closestEnemy = null;
+		EnemyHealth closestEnemy = null;
 
 		for (int i = 0; i < _enemiesTotalAmount.Length; i++)
 		{

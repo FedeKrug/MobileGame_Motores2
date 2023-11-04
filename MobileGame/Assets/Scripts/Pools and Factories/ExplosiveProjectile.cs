@@ -17,7 +17,7 @@ public class ExplosiveProjectile : MagicProjectile
 	[SerializeField] private Rigidbody _rb;
 	protected override void OnTriggerEnter(Collider other)
 	{
-		Enemy enemyRef = other.gameObject.GetComponent<Enemy>();
+		EnemyHealth enemyRef = other.gameObject.GetComponent<EnemyHealth>();
 
 		if (enemyRef)
 		{

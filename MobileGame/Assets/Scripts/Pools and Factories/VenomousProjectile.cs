@@ -12,7 +12,7 @@ public class VenomousProjectile : ExplosiveProjectile
 
 	protected override void OnTriggerEnter(Collider other)
 	{
-		Enemy enemyRef = other.gameObject.GetComponent<Enemy>();
+		EnemyHealth enemyRef = other.gameObject.GetComponent<EnemyHealth>();
 
 		if (enemyRef)
 		{
@@ -24,7 +24,7 @@ public class VenomousProjectile : ExplosiveProjectile
 	}
 	private void OnTriggerStay(Collider other)
 	{
-		Enemy enemyRef = other.gameObject.GetComponent<Enemy>();
+		EnemyHealth enemyRef = other.gameObject.GetComponent<EnemyHealth>();
 
 
 		if (enemyRef && _poisoned)

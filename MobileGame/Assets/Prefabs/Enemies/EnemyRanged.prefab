@@ -1355,6 +1355,7 @@ GameObject:
   - component: {fileID: 8652055194795468254}
   - component: {fileID: 8652055194795468255}
   - component: {fileID: 7597071325289999465}
+  - component: {fileID: 3579680673077732608}
   m_Layer: 3
   m_Name: EnemyRanged
   m_TagString: Enemy
@@ -1393,12 +1394,6 @@ MonoBehaviour:
   _testBool: 0
   maxVelocity: 1
   maxSpeed: 1
-  _deathPlace: {fileID: 0}
-  _meshToTurnOff: {fileID: 2369606496670541290}
-  _manaCharge: 60
-  counterRef: {fileID: 0}
-  _health: 10
-  _dropRef: {fileID: 7597071325289999465}
 --- !u!136 &8652055194795468225
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1469,6 +1464,24 @@ MonoBehaviour:
   - {fileID: 1177541165076663029, guid: 36c487fb35831d94eab6dafc5fbb5aea, type: 3}
   - {fileID: 8131432372990651020, guid: 17ff938d5f140c4458d46bf0b8e97dad, type: 3}
   - {fileID: 1177541165076663029, guid: 36c487fb35831d94eab6dafc5fbb5aea, type: 3}
+--- !u!114 &3579680673077732608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8652055194795468226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab3e524dc313654081e964504c13ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathPlace: {fileID: 0}
+  _meshToTurnOff: {fileID: 2369606496670541290}
+  _manaCharge: 60
+  counterRef: {fileID: 0}
+  _health: 50
+  _dropRef: {fileID: 7597071325289999465}
 --- !u!1 &8726006930690693800
 GameObject:
   m_ObjectHideFlags: 0

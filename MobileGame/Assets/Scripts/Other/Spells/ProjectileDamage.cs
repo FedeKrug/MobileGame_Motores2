@@ -10,7 +10,7 @@ public class ProjectileDamage : MonoBehaviour
 	{
 		if (other.CompareTag("Enemy"))
 		{
-			other.GetComponent<Enemy>().TakeDamage(_damage);
+			other.GetComponent<EnemyHealth>().TakeDamage(_damage);
 			_projectileRef.Reset();
 			Debug.Log("Enemy attacked");
 		}

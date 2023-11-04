@@ -22,7 +22,7 @@ public abstract class MagicProjectile : MonoBehaviour
 
 	protected virtual void OnTriggerEnter(Collider other)
 	{
-		Enemy enemyRef = other.gameObject.GetComponent<Enemy>();
+		EnemyHealth enemyRef = other.gameObject.GetComponent<EnemyHealth>();
 
 		if (enemyRef)
 		{
