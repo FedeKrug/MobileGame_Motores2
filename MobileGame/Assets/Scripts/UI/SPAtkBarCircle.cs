@@ -9,7 +9,9 @@ public class SPAtkBarCircle : MonoBehaviour
 	[SerializeField] private GameObject _superProjectile;
 	[SerializeField] private PlayerShooting _playerShootingRef;
 
-	private float _currentMana = 0;
+	private bool _projectileCreated;
+
+	[SerializeField] private float _currentMana = 0;
 	private bool _canShoot = false;
 
 	private void Start()
@@ -29,7 +31,7 @@ public class SPAtkBarCircle : MonoBehaviour
 			_currentMana = _maxMana;
 			_canShoot = true;
 		}
-		if (_currentMana <=0)
+		if (_currentMana <= 0)
 		{
 			_currentMana = 0;
 			_canShoot = false;
@@ -47,7 +49,13 @@ public class SPAtkBarCircle : MonoBehaviour
 	{
 		if (!_canShoot) return;
 		Debug.Log("Special Shoot");
-		Instantiate(_superProjectile);
+		if (!_projectileCreated)
+		{
+			Instantiate(_superProjectile, _playerShootingRef.ShootingPoint.position, _playerShootingRef.ShootingPoint.rotation);
+		}
+
+		_projectileCreated = true;
+
 		_playerShootingRef.Shoot(_superProjectile);
 		_currentMana = 0;
 		UpdateManaAmount();

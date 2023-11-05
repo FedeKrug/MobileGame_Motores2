@@ -24,6 +24,12 @@ public class PlayerShooting : MonoBehaviour
 		get => _enemyCounterRef;
 		set => _enemyCounterRef = value;
 	}
+	public Transform ShootingPoint
+	{
+		get => _shootingPoint;
+		set =>
+			_shootingPoint = value;
+	}
 
 	void Start()
 	{

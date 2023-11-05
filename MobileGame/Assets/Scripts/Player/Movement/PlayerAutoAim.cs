@@ -9,17 +9,15 @@ public class PlayerAutoAim : MonoBehaviour
 	[SerializeField] private PlayerShooting _playerShootingRef;
 
 	private EnemyHealth closestEnemy;
-	
+
 	private void OnEnable()
 	{
 		closestEnemy = FindClosestEnemy();
 	}
 	private void Update()
 	{
-		//if (_playerShootingRef.Moving || !EnemyManager.instance.activeCounter.enemiesInCounter ) return;
-		
 		closestEnemy = FindClosestEnemy();
-		
+
 		if (closestEnemy != null)
 		{
 			transform.LookAt(new Vector3(closestEnemy.transform.position.x, transform.position.y, closestEnemy.transform.position.z));
@@ -28,9 +26,9 @@ public class PlayerAutoAim : MonoBehaviour
 
 	private EnemyHealth FindClosestEnemy()
 	{
-		for (int i =0; i<_enemiesTotalAmount.Length; i++)
+		for (int i = 0; i < _enemiesTotalAmount.Length; i++)
 		{
-		_enemiesTotalAmount[i] = _playerShootingRef.EnemyCounterRef.EnemiesInCounter[i];
+			_enemiesTotalAmount[i] = _playerShootingRef.EnemyCounterRef.EnemiesInCounter[i];
 
 		}
 

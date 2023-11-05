@@ -6,15 +6,17 @@ public abstract class EnemyBehaviour : MonoBehaviour
 {
 	Vector3 _velocity;
 	Vector3 _target;
-	NavMeshAgent _agent;
+	//NavMeshAgent _agent;
 	[SerializeField] protected bool _testBool;
+	[SerializeField] protected bool _fleeBool;
 	[SerializeField] protected float maxVelocity;
 	[SerializeField] protected float maxSpeed;
 
-	protected virtual void Start()
-	{
-		_agent = gameObject.GetComponent<NavMeshAgent>();
-	}
+	//protected virtual void Start()
+	//{
+	//	_agent = gameObject.GetComponent<NavMeshAgent>();
+		
+	//}
 
 	protected virtual void Update()
 	{
@@ -24,10 +26,17 @@ public abstract class EnemyBehaviour : MonoBehaviour
 			transform.position += _velocity * Time.deltaTime;
 			transform.forward = _velocity;
 		}
+		if (_fleeBool)
+		{
+			Flee(_target);
+			transform.position -= _velocity * Time.deltaTime;
+			transform.forward = -_velocity;
+		}
 	}
 
 	void Seek(Vector3 target)
 	{
+		_target = GameManager.instance.PlayerPos.position;
 		var desired = target - transform.position;
 		desired = desired.normalized * maxSpeed;
 
@@ -38,6 +47,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
 	}
 	void Flee(Vector3 target)
 	{
+		_target = GameManager.instance.PlayerPos.position;
 		var desired = transform.position - target;
 		desired = desired.normalized * maxSpeed;
 
