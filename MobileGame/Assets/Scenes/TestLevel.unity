@@ -1441,6 +1441,7 @@ MonoBehaviour:
   _maxMana: 150
   _superProjectile: {fileID: 7589471255087343236, guid: 7783252fefd646a469e0ec9172d9304e, type: 3}
   _playerShootingRef: {fileID: 711103224}
+  _currentMana: 0
 --- !u!114 &74388382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4201,6 +4202,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479552323}
     m_Modifications:
+    - target: {fileID: 3579680673077732608, guid: c861b854191527143a36a1c3036db191, type: 3}
+      propertyPath: _health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3579680673077732608, guid: c861b854191527143a36a1c3036db191, type: 3}
       propertyPath: _deathPlace
       value: 
@@ -16726,6 +16731,7 @@ MonoBehaviour:
   _maxMana: 150
   _superProjectile: {fileID: 7589471255087343236, guid: 7783252fefd646a469e0ec9172d9304e, type: 3}
   _playerShootingRef: {fileID: 711103224}
+  _currentMana: 0
 --- !u!1 &1305367795
 GameObject:
   m_ObjectHideFlags: 0
@@ -19801,6 +19807,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1479552323}
     m_Modifications:
     - target: {fileID: 3579680673077732608, guid: c861b854191527143a36a1c3036db191, type: 3}
+      propertyPath: _health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579680673077732608, guid: c861b854191527143a36a1c3036db191, type: 3}
       propertyPath: _deathPlace
       value: 
       objectReference: {fileID: 2137183454}
@@ -20368,6 +20378,7 @@ MonoBehaviour:
   _maxMana: 150
   _superProjectile: {fileID: 7589471255087343236, guid: 7783252fefd646a469e0ec9172d9304e, type: 3}
   _playerShootingRef: {fileID: 711103224}
+  _currentMana: 0
 --- !u!114 &1535876296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20721,7 +20732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -223.5, y: -484.34784}
+  m_AnchoredPosition: {x: -250, y: -300}
   m_SizeDelta: {x: 547, y: 1068.6957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1582549528
@@ -21309,8 +21320,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 25}
-  m_SizeDelta: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1600672294
 Canvas:
@@ -21319,7 +21330,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600672292}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -31267,6 +31278,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479552323}
     m_Modifications:
+    - target: {fileID: 3579680673077732608, guid: c861b854191527143a36a1c3036db191, type: 3}
+      propertyPath: _health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3579680673077732608, guid: c861b854191527143a36a1c3036db191, type: 3}
       propertyPath: counterRef
       value: 
