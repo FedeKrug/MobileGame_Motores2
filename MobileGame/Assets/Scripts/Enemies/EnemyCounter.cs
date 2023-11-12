@@ -14,14 +14,16 @@ public class EnemyCounter : MonoBehaviour
 		get => _enemyCount;
 		set => _enemyCount = value;
 	}
-	public List<EnemyHealth> EnemiesInCounter { 
-		get => _enemiesInCounter; 
+	public List<EnemyHealth> EnemiesInCounter
+	{
+		get => _enemiesInCounter;
 		set => _enemiesInCounter = value;
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Enemy") && !_enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
+		EnemyBehaviour enemyRef = other.GetComponent<EnemyBehaviour>();
+		if (enemyRef && !_enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
 		{
 			_enemiesInCounter.Add(other.GetComponent<EnemyHealth>());
 			_enemyCount++;
@@ -29,13 +31,18 @@ public class EnemyCounter : MonoBehaviour
 		}
 		if (other.CompareTag("Player"))
 		{
+			for (int i = 0; i < _enemiesInCounter.Count; i++)
+			{
+				_enemiesInCounter[i].GetComponent<EnemyBehaviour>().TestBool = true;
+			}
 			playerInCounter = true;
 		}
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.CompareTag("Enemy") && _enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
+		var enemyRef = other.CompareTag("Enemy");
+		if (enemyRef && _enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
 		{
 			_enemiesInCounter.Remove(other.GetComponent<EnemyHealth>());
 			_enemyCount--;
@@ -43,9 +50,12 @@ public class EnemyCounter : MonoBehaviour
 		}
 		if (other.CompareTag("Player"))
 		{
+			for (int i = 0; i < _enemiesInCounter.Count; i++)
+			{
+				_enemiesInCounter[i].GetComponent<EnemyBehaviour>().TestBool = false;
+			}
 			playerInCounter = false;
 		}
-
 	}
 
 	private bool UpdateCounter()

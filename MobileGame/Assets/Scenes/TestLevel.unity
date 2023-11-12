@@ -4259,6 +4259,10 @@ PrefabInstance:
       value: Enemy_1
       objectReference: {fileID: 0}
     - target: {fileID: 8652055194795468227, guid: c861b854191527143a36a1c3036db191, type: 3}
+      propertyPath: _testBool
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652055194795468227, guid: c861b854191527143a36a1c3036db191, type: 3}
       propertyPath: counterRef
       value: 
       objectReference: {fileID: 1275347524}
@@ -9927,8 +9931,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -82.33284}
-  m_SizeDelta: {x: 0, y: -600.1261}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 0, y: -300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &712124102
 MonoBehaviour:
@@ -12625,8 +12629,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.029740741, y: 0.8721496}
   m_AnchorMax: {x: 1, y: 0.8925774}
-  m_AnchoredPosition: {x: 9, y: 1}
-  m_SizeDelta: {x: -18, y: 2}
+  m_AnchoredPosition: {x: 9, y: -50}
+  m_SizeDelta: {x: -18, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &924898816
 MonoBehaviour:
@@ -19863,6 +19867,10 @@ PrefabInstance:
       value: Enemy_2
       objectReference: {fileID: 0}
     - target: {fileID: 8652055194795468227, guid: c861b854191527143a36a1c3036db191, type: 3}
+      propertyPath: _testBool
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652055194795468227, guid: c861b854191527143a36a1c3036db191, type: 3}
       propertyPath: counterRef
       value: 
       objectReference: {fileID: 1275347524}
@@ -21330,7 +21338,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600672292}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -31337,6 +31345,10 @@ PrefabInstance:
     - target: {fileID: 8652055194795468226, guid: c861b854191527143a36a1c3036db191, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652055194795468227, guid: c861b854191527143a36a1c3036db191, type: 3}
+      propertyPath: _testBool
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c861b854191527143a36a1c3036db191, type: 3}
