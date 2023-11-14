@@ -7,33 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2269227023344010935, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
+    - target: {fileID: 3399560332455720743, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
+      value: 0.07775002
       objectReference: {fileID: 0}
-    - target: {fileID: 2269227023344010935, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
+    - target: {fileID: 3399560332455720743, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.41138873
+      value: 0.89859235
       objectReference: {fileID: 0}
-    - target: {fileID: 2269227023344010935, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
+    - target: {fileID: 3399560332455720743, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.39215684
+      value: 0.9811321
       objectReference: {fileID: 0}
-    - target: {fileID: 4098058294035696864, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7589471254006937820, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 68297a3f3164c624b86a72746c33aac8, type: 2}
     - target: {fileID: 7589471255087343236, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
       propertyPath: m_Name
       value: ExplosiveProjectile Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 7589471255087343236, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7589471255087343238, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
       propertyPath: m_RootOrder
@@ -81,7 +69,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9058482042478521297, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
       propertyPath: _damage
-      value: 15
+      value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 9058482042478521297, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
+      propertyPath: _spellMesh
+      value: 
+      objectReference: {fileID: 8839808188158558884}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
+--- !u!1 &8839808188158558884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6300395102019975684, guid: c25639eacaea3214188570b58ff32ff8, type: 3}
+  m_PrefabInstance: {fileID: 3297252031781484704}
+  m_PrefabAsset: {fileID: 0}

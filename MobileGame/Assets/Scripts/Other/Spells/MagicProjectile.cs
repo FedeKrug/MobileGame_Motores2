@@ -28,6 +28,8 @@ public abstract class MagicProjectile : MonoBehaviour
 		{
 			enemyRef.TakeDamage(_damage);
 			Reset();
+			bool activedProjectile = false;
+			TurnOnOff(this, activedProjectile);
 		}
 	}
 
