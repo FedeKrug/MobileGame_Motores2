@@ -4,7 +4,6 @@ public abstract class MagicProjectile : MonoBehaviour
 {
 	[SerializeField] protected float _speed = 10f, _maxDistance = 500f, _currentDistance = 0f;
 	[SerializeField] protected float _damage = 4;
-	[SerializeField] protected ProjectileSoundEffect _effect;
 	protected void Update()
 	{
 		float distanceToTravel = _speed * Time.deltaTime;
