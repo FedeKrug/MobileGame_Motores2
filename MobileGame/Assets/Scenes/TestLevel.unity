@@ -3041,6 +3041,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c778632a4e075c3408e0fb4d95cb4b1e, type: 3}
   m_PrefabInstance: {fileID: 189454488}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &191401833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191401834}
+  - component: {fileID: 191401835}
+  m_Layer: 0
+  m_Name: AdManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &191401834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191401833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 778735098}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &191401835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191401833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b0effee4eca6d41a1755b7d6d7bce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adType: 
 --- !u!1 &193691625
 GameObject:
   m_ObjectHideFlags: 0
@@ -10722,6 +10767,7 @@ Transform:
   - {fileID: 1780265650}
   - {fileID: 1589157530}
   - {fileID: 931576089}
+  - {fileID: 191401834}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23899,6 +23945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1780265650}
+  - component: {fileID: 1780265654}
   - component: {fileID: 1780265651}
   - component: {fileID: 1780265652}
   - component: {fileID: 1780265653}
@@ -23979,6 +24026,18 @@ MonoBehaviour:
     coins: 0
   _scoreText: {fileID: 924898816}
   _healthBar: {fileID: 2013194406}
+--- !u!114 &1780265654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780265649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb006ea4ebf70c4982f6dd6125c37a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1788999644
 PrefabInstance:
   m_ObjectHideFlags: 0
