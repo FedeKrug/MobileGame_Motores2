@@ -3051,6 +3051,9 @@ GameObject:
   m_Component:
   - component: {fileID: 191401834}
   - component: {fileID: 191401835}
+  - component: {fileID: 191401838}
+  - component: {fileID: 191401837}
+  - component: {fileID: 191401836}
   m_Layer: 0
   m_Name: AdManager
   m_TagString: Untagged
@@ -3088,6 +3091,53 @@ MonoBehaviour:
   _androidGameId: 5477036
   _iOSGameId: 5477037
   _testMode: 1
+--- !u!114 &191401836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191401833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb1d744fc50a8084db153f16f1d894fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidAdUnitId: Interstitial_Android
+  _iOsAdUnitId: Interstitial_iOS
+--- !u!114 &191401837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191401833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03c99d641d40404eb3a6241afae61d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showAdButton: {fileID: 0}
+  _androidAdUnitId: Rewarded_Android
+  _iOSAdUnitId: Rewarded_iOS
+--- !u!114 &191401838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191401833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3173e7c30faa9294fac646dc9077c057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadBannerButton: {fileID: 0}
+  _showBannerButton: {fileID: 0}
+  _hideBannerButton: {fileID: 0}
+  _bannerPosition: 4
+  _androidAdUnitId: Banner_Android
+  _iOSAdUnitId: Banner_iOS
 --- !u!1 &193691625
 GameObject:
   m_ObjectHideFlags: 0
