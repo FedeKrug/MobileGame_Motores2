@@ -15,12 +15,6 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
 		Advertisement.AddListener(this);
 	}
 
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.A))
-			ShowAd();
-	}
-
 	public void ShowAd()
 	{
 		if (!Advertisement.IsReady())
