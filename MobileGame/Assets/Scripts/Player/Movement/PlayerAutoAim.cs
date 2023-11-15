@@ -5,38 +5,36 @@ using UnityEngine;
 
 public class PlayerAutoAim : MonoBehaviour
 {
-	[SerializeField] private Enemy[] _enemiesTotalAmount;
+	[SerializeField] private EnemyHealth[] _enemiesTotalAmount;
 	[SerializeField] private PlayerShooting _playerShootingRef;
 
-	private Enemy closestEnemy;
-	
+	private EnemyHealth closestEnemy;
+
 	private void OnEnable()
 	{
 		closestEnemy = FindClosestEnemy();
 	}
 	private void Update()
 	{
-		//if (_playerShootingRef.Moving || !EnemyManager.instance.activeCounter.enemiesInCounter ) return;
-		
 		closestEnemy = FindClosestEnemy();
-		
+
 		if (closestEnemy != null)
 		{
 			transform.LookAt(new Vector3(closestEnemy.transform.position.x, transform.position.y, closestEnemy.transform.position.z));
 		}
 	}
 
-	private Enemy FindClosestEnemy()
+	private EnemyHealth FindClosestEnemy()
 	{
-		for (int i =0; i<_enemiesTotalAmount.Length; i++)
+		for (int i = 0; i < _enemiesTotalAmount.Length; i++)
 		{
-		_enemiesTotalAmount[i] = _playerShootingRef.EnemyCounterRef.EnemiesInCounter[i];
+			_enemiesTotalAmount[i] = _playerShootingRef.EnemyCounterRef.EnemiesInCounter[i];
 
 		}
 
 		// Encuentra el enemigo más cercano al jugador.
 		float closestDistance = float.MaxValue;
-		Enemy closestEnemy = null;
+		EnemyHealth closestEnemy = null;
 
 		for (int i = 0; i < _enemiesTotalAmount.Length; i++)
 		{

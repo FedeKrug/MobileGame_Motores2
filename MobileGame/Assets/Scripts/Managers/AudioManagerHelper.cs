@@ -10,6 +10,7 @@ public class AudioManagerHelper : MonoBehaviour
 
 	[SerializeField] private Sprite _unmutedVolumeIcon, _mutedVolumeIcon;
 	[SerializeField] private Image _initVolumeIcon;
+	[SerializeField] private VolumeSettings _volume;
 
 	public bool mutedVolume;
 
@@ -30,9 +31,7 @@ public class AudioManagerHelper : MonoBehaviour
 		mutedVolume = !mutedVolume;
 		if (mutedVolume)
 		{
-			//Debug.Log($"<color=yellow>Mute Volume</color>");
-			//Mutear el volumen
-			_initVolumeIcon.sprite = _mutedVolumeIcon;
+			MuteVolume();
 		}
 		else
 		{
@@ -41,9 +40,14 @@ public class AudioManagerHelper : MonoBehaviour
 	}
 	private void ActiveVolume()
 	{
-		//Debug.Log($"<color=yellow>Unmute Volume</color>");
 			_initVolumeIcon.sprite = _unmutedVolumeIcon;
+	
+	
+	}
 
-		//Si el volumen fue muteado, lo desmutea
+	private void MuteVolume()
+	{
+		_volume.MuteAudio();
+		_initVolumeIcon.sprite = _mutedVolumeIcon;
 	}
 }

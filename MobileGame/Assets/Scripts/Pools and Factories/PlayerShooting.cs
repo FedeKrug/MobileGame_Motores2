@@ -24,6 +24,12 @@ public class PlayerShooting : MonoBehaviour
 		get => _enemyCounterRef;
 		set => _enemyCounterRef = value;
 	}
+	public Transform ShootingPoint
+	{
+		get => _shootingPoint;
+		set =>
+			_shootingPoint = value;
+	}
 
 	void Start()
 	{
@@ -50,7 +56,7 @@ public class PlayerShooting : MonoBehaviour
 
 	public void Shoot(GameObject projectile)
 	{
-		projectile.transform.SetPositionAndRotation(_shootingPoint.position, transform.rotation);
+		projectile.transform.SetPositionAndRotation(_shootingPoint.position, _shootingPoint.rotation);
 		_timer = _maxTime;
 	}
 

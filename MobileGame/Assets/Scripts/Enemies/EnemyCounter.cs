@@ -7,45 +7,55 @@ public class EnemyCounter : MonoBehaviour
 	[SerializeField] private int _enemyCount = 1;
 	public bool areThereEnemiesInCounter = true;
 	public bool playerInCounter = false;
-	[SerializeField] private List<Enemy> _enemiesInCounter = new();
+	[SerializeField] private List<EnemyHealth> _enemiesInCounter = new();
 
 	public int EnemyCount
 	{
 		get => _enemyCount;
 		set => _enemyCount = value;
 	}
-	public List<Enemy> EnemiesInCounter { 
-		get => _enemiesInCounter; 
+	public List<EnemyHealth> EnemiesInCounter
+	{
+		get => _enemiesInCounter;
 		set => _enemiesInCounter = value;
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Enemy") && !_enemiesInCounter.Contains(other.GetComponent<Enemy>()))
+		EnemyBehaviour enemyRef = other.GetComponent<EnemyBehaviour>();
+		if (enemyRef && !_enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
 		{
-			_enemiesInCounter.Add(other.GetComponent<Enemy>());
+			_enemiesInCounter.Add(other.GetComponent<EnemyHealth>());
 			_enemyCount++;
 			UpdateCounter();
 		}
 		if (other.CompareTag("Player"))
 		{
+			for (int i = 0; i < _enemiesInCounter.Count; i++)
+			{
+				_enemiesInCounter[i].GetComponent<EnemyBehaviour>().TestBool = true;
+			}
 			playerInCounter = true;
 		}
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.CompareTag("Enemy") && _enemiesInCounter.Contains(other.GetComponent<Enemy>()))
+		var enemyRef = other.CompareTag("Enemy");
+		if (enemyRef && _enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
 		{
-			_enemiesInCounter.Remove(other.GetComponent<Enemy>());
+			_enemiesInCounter.Remove(other.GetComponent<EnemyHealth>());
 			_enemyCount--;
 			UpdateCounter();
 		}
 		if (other.CompareTag("Player"))
 		{
+			for (int i = 0; i < _enemiesInCounter.Count; i++)
+			{
+				_enemiesInCounter[i].GetComponent<EnemyBehaviour>().TestBool = false;
+			}
 			playerInCounter = false;
 		}
-
 	}
 
 	private bool UpdateCounter()

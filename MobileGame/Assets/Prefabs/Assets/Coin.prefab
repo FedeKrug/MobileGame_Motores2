@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3386630937790759213}
   - component: {fileID: 8774567433063343800}
   - component: {fileID: 7676416218372438836}
-  - component: {fileID: 6430676070047284057}
   - component: {fileID: 2116456585433150973}
+  - component: {fileID: 4157253511248517920}
   m_Layer: 8
   m_Name: Coin
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1177541165076663029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.77903, y: 0.067232676, z: 0.77903}
+  m_LocalScale: {x: 0.6, y: 1, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177541165076663029}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -127844609115117539, guid: f48a1b3e05cf7d94f9ec9b272c050643, type: 3}
 --- !u!23 &8774567433063343800
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e101a3fe2dfd71441bf2a4647e490d67, type: 2}
+  - {fileID: 2100000, guid: 7943be8f14bf620439377a61014df5d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,19 +99,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5454479
   m_Center: {x: 0.00000005960465, y: 0, z: -0.00000008940698}
---- !u!114 &6430676070047284057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177541165076663029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9251827e632b4bf4ba8f194357be584d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _score: 10
 --- !u!95 &2116456585433150973
 Animator:
   serializedVersion: 4
@@ -132,3 +119,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4157253511248517920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177541165076663029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9251827e632b4bf4ba8f194357be584d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 30

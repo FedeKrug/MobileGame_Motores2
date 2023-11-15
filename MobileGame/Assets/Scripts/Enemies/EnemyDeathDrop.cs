@@ -6,11 +6,11 @@ public class EnemyDeathDrop : MonoBehaviour
 {
 	[SerializeField] private int _minDropAmount, _maxDropAmount;
 	[SerializeField] private GameObject [] _objectsToDrop;
-	private Enemy _enemyRef;
+	private EnemyHealth _enemyRef;
 
 	private void Start()
 	{
-		_enemyRef = GetComponentInParent<Enemy>();
+		_enemyRef = GetComponentInParent<EnemyHealth>();
 	}
 
 	public void DropObjects(Vector3 dropPosition)
