@@ -10,7 +10,7 @@ public class PlayerShooting : MonoBehaviour
 	[SerializeField] EnemyCounter _enemyCounterRef;
 	[SerializeField] private PlayerAutoAim _playerAim;
 	[SerializeField] private bool _canAim;
-	[SerializeField] private ProjectileSoundEffect _projectileSoundEffect;
+	[SerializeField] private GameObject _projectileSoundEffect;
 
 	private float _maxTime;
 	private float _timer;
@@ -59,8 +59,9 @@ public class PlayerShooting : MonoBehaviour
 	{
 		projectile.transform.SetPositionAndRotation(_shootingPoint.position, _shootingPoint.rotation);
 		_timer = _maxTime;
-		_projectileSoundEffect.PlaySoundEffect();
-	}
+		//if (_projectileSoundEffect.GetComponent<ProjectileSoundEffect>().PlaySoundEffect())
+		_projectileSoundEffect.GetComponent<ProjectileSoundEffect>().PlaySoundEffect();
+    }
 
 
 }

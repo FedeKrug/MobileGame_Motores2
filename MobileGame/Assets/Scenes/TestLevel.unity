@@ -3057,7 +3057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &191401834
 Transform:
   m_ObjectHideFlags: 0
@@ -9891,6 +9891,7 @@ MonoBehaviour:
   _enemyCounterRef: {fileID: 1516061624}
   _playerAim: {fileID: 711103226}
   _canAim: 0
+  _projectileSoundEffect: {fileID: 0}
 --- !u!4 &711103225
 Transform:
   m_ObjectHideFlags: 0
