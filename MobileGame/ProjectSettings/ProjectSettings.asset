@@ -902,11 +902,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: 21706068-b0ad-4ef8-a30f-1c49a330663c
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: MageHunter
+  organizationId: fede_k
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
