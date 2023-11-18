@@ -12,6 +12,8 @@ public class AudioManagerHelper : MonoBehaviour
 	[SerializeField] private Image _initVolumeIcon;
 	[SerializeField] private VolumeSettings _volume;
 
+	private float _masterVolumeHelper, _sfxVolumeHelper, _musicVolumeHelper;
+
 	public bool mutedVolume;
 
 	private void Awake()
@@ -28,6 +30,8 @@ public class AudioManagerHelper : MonoBehaviour
 
 	public void ChangeMutedVolumeState()
 	{
+
+
 		mutedVolume = !mutedVolume;
 		if (mutedVolume)
 		{
@@ -40,13 +44,19 @@ public class AudioManagerHelper : MonoBehaviour
 	}
 	private void ActiveVolume()
 	{
-			_initVolumeIcon.sprite = _unmutedVolumeIcon;
-	
-	
+		_volume.masterVolumeSlider.value = _masterVolumeHelper;
+		_volume.musicVolumeSlider.value = _musicVolumeHelper;
+		_volume.sfxVolumeSlider.value = _sfxVolumeHelper;
+
+		_initVolumeIcon.sprite = _unmutedVolumeIcon;
 	}
 
 	private void MuteVolume()
 	{
+		_masterVolumeHelper = _volume.masterVolumeSlider.value;
+		_musicVolumeHelper = _volume.musicVolumeSlider.value;
+		_sfxVolumeHelper = _volume.sfxVolumeSlider.value;
+
 		_volume.MuteAudio();
 		_initVolumeIcon.sprite = _mutedVolumeIcon;
 	}

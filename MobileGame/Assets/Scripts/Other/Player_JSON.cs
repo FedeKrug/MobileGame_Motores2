@@ -5,6 +5,21 @@ public class Player_JSON : MonoBehaviour
 {
 	[SerializeField] private SaveData _data;
 	private string _path;
+
+	public static Player_JSON instance;
+
+	private void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+	}
+
 	private void Start()
 	{
 		string _newPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("\\", "/") + $"/{Application.productName}";
@@ -25,7 +40,7 @@ public class Player_JSON : MonoBehaviour
 		if (!File.Exists(_path))
 		{
 			Debug.Log($"<color=yellow>There's no Data to Load</color>");
-			//Save();
+			Save();
 			//Por si quiero guardar en caso de que no haya ninguna partida guardada y quiero cargar el juego
 			return;
 		}
