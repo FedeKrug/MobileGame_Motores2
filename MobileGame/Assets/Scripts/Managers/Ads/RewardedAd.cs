@@ -60,6 +60,7 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
 		{
 			Debug.Log("Unity Ads Rewarded Ad Completed");
 			// Grant a reward.
+			UIManager.instance.TakeCoins(150);
 		}
 	}
 

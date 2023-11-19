@@ -24,8 +24,8 @@ public class MenuManager : MonoBehaviour
 
 	private void Start()
 	{
-		Player_JSON.instance.LoadData();
-		_saveData = UIManager.instance.SaveData;
+		DataManager.instance.LoadData();
+		_saveData = DataManager.instance.data;
 
 	}
 
