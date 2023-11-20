@@ -26,7 +26,7 @@ public class MenuManager : MonoBehaviour
 	{
 		DataManager.instance.LoadData();
 		_saveData = DataManager.instance.data;
-
+		UpdateMenuUI();
 	}
 
 	private void UpdateMenuUI()

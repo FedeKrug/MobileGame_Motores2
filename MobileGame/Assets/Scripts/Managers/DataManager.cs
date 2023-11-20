@@ -3,6 +3,7 @@ using UnityEngine;
 using System.IO;
 using System;
 
+//[DefaultExecutionOrder(-10)]
 public class DataManager : MonoBehaviour
 {
 	public static DataManager instance;
@@ -21,9 +22,16 @@ public class DataManager : MonoBehaviour
 		}
 	}
 
+	private void Start()
+	{
+		string _newPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("\\", "/") + $"/{Application.productName}";
+		_path = _newPath + "/data.json";
+		Debug.Log(_path);
+	}
+
 	public void Save()
 	{
-		
+
 		Debug.Log($"<color=yellow>Saved Data</color>");
 		string jsonData = JsonUtility.ToJson(data, true);
 		File.WriteAllText(_path, jsonData);
@@ -38,12 +46,16 @@ public class DataManager : MonoBehaviour
 			//Por si quiero guardar en caso de que no haya ninguna partida guardada y quiero cargar el juego
 			return;
 		}
-		
+
 		Debug.Log($"<color=yellow>Loaded Data</color>");
 		string jsonLoadData = File.ReadAllText(_path);
 		//_data =JsonUtility.FromJson<SaveData>(jsonLoadData); se usa para clases que heredan de Monobehaviour
 		JsonUtility.FromJsonOverwrite(jsonLoadData, data);
-		UIManager.instance.LoadDataUI();
+		if (UIManager.instance != null)
+		{
+			UIManager.instance.LoadDataUI();
+
+		}
 
 	}
 
