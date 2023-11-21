@@ -1,64 +1,89 @@
-﻿using System.Collections;
+﻿//using System.Collections;
+//using UnityEngine;
+
+
+
+//public class VenomousProjectile : ExplosiveProjectile
+//{
+//	[SerializeField] private float _poisonCooldown;
+//	[SerializeField] private float _poisonDamage;
+//	private bool _poisoned;
+
+
+//	protected override void OnTriggerEnter(Collider other)
+//	{
+//		EnemyHealth enemyRef = other.gameObject.GetComponent<EnemyHealth>();
+
+//		if (enemyRef)
+//		{
+//			enemyRef.TakeDamage(_damage);
+//			Explode();
+
+//		}
+
+//	}
+//	private void OnTriggerStay(Collider other)
+//	{
+//		EnemyHealth enemyRef = other.gameObject.GetComponent<EnemyHealth>();
+
+
+//		if (enemyRef && _poisoned)
+//		{
+
+//			enemyRef.TakeDamage(_poisonDamage);
+
+//		}
+//	}
+
+
+//	private IEnumerator UseVenomEffect()
+//	{
+//		_speed = 0;
+
+//		yield return null;
+//		_spellMesh.SetActive(false);
+//		_explosionEffect.SetActive(true);
+//		_aSource.PlayOneShot(_explosionSound);
+//		StartCoroutine(UseVenomousEffect());
+//		yield return new WaitForSeconds(_explosionDuration);
+//		Reset();
+//	}
+
+//	private IEnumerator UseVenomousEffect()
+//	{
+//		_poisoned = true;
+//		yield return new WaitForSeconds(_poisonCooldown);
+//		_poisoned = false;
+//		StartCoroutine(UseVenomousEffect());
+//	}
+
+//	private void Explode()
+//	{
+//		StartCoroutine(UseVenomEffect());
+//	}
+//}
 using UnityEngine;
 
-
-
-public class VenomousProjectile : ExplosiveProjectile
+public class VenomousProjectile : MonoBehaviour
 {
-	[SerializeField] private float _venomCooldown;
-	[SerializeField] private float _venomDamage;
-	private bool _poisoned;
+	[SerializeField] private int _poisonDamage = 5;
+	[SerializeField] private float _poisonDuration = 3f;
+	private float _timer = 0f;
 
-
-	protected override void OnTriggerEnter(Collider other)
+	void Update()
 	{
-		EnemyHealth enemyRef = other.gameObject.GetComponent<EnemyHealth>();
+		EnemyHealth enemyRef = GetComponent<EnemyHealth>();
+		if (!enemyRef) return;
 
-		if (enemyRef)
+		_timer += Time.deltaTime;
+		if (_timer >= _poisonDuration)
 		{
-			enemyRef.TakeDamage(_damage);
-			Explode();
+			// Apply poison damage
+			enemyRef.TakeDamage(_poisonDamage);
 
+
+			// Set the next poison time
+			_timer = 0;
 		}
-
-	}
-	private void OnTriggerStay(Collider other)
-	{
-		EnemyHealth enemyRef = other.gameObject.GetComponent<EnemyHealth>();
-
-
-		if (enemyRef && _poisoned)
-		{
-
-			enemyRef.TakeDamage(_venomDamage);
-
-		}
-	}
-
-
-	private IEnumerator UseVenomEffect()
-	{
-		_speed = 0;
-		
-		yield return null;
-		_spellMesh.SetActive(false);
-		_explosionEffect.SetActive(true);
-		_aSource.PlayOneShot(_explosionSound);
-		StartCoroutine(UseVenomousEffect());
-		yield return new WaitForSeconds(_explosionDuration);
-		Reset();
-	}
-
-	private IEnumerator UseVenomousEffect()
-	{
-		_poisoned = true;
-		yield return new WaitForSeconds(_venomCooldown);
-		_poisoned = false;
-		StartCoroutine(UseVenomousEffect());
-	}
-
-	private void Explode()
-	{
-		StartCoroutine(UseVenomEffect());
 	}
 }

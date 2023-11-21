@@ -8,7 +8,7 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
 	[SerializeField] string _androidAdUnitId = "Rewarded_Android";
 	[SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
 	string _adUnitId = null; // This will remain null for unsupported platforms
-
+	[SerializeField] private int _reward;
 	void Awake()
 	{
 		// Get the Ad Unit ID for the current platform:
@@ -60,7 +60,9 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
 		{
 			Debug.Log("Unity Ads Rewarded Ad Completed");
 			// Grant a reward.
-			UIManager.instance.TakeCoins(150);
+			UIManager.instance.TakeCoins(_reward);
+			DataManager.instance.Save();
+			DataManager.instance.LoadData();
 		}
 	}
 

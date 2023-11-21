@@ -56,6 +56,10 @@ public class DataManager : MonoBehaviour
 			UIManager.instance.LoadDataUI();
 
 		}
+		if (MenuManager.instance != null)
+		{
+			MenuManager.instance.UpdateMenuUI();
+		}
 
 	}
 

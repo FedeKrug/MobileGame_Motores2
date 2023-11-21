@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
 
-using UnityEngine;
-
-
-public class Store : MonoBehaviour
+public class AbilitiesUI : MonoBehaviour
 {
-    [SerializeField] ItemUI prefab;
-    [SerializeField] StoreItemSO[] items = new StoreItemSO[0];
+    [SerializeField] AbilityItemUI prefab;
+    [SerializeField] AbilityItemSO[] items = new AbilityItemSO[0];
     [SerializeField] Transform parent = null;
 
     private void Start()
@@ -18,5 +14,4 @@ public class Store : MonoBehaviour
             newObj.SetItem(items[i]);
         }
     }
-
 }
