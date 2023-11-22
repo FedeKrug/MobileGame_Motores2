@@ -4824,7 +4824,6 @@ GameObject:
   - component: {fileID: 7589471255087343239}
   - component: {fileID: 344584241176956767}
   - component: {fileID: 2385754336186208842}
-  - component: {fileID: 5409519019870665565}
   m_Layer: 7
   m_Name: BasicProjectile
   m_TagString: Untagged
@@ -4864,7 +4863,6 @@ MonoBehaviour:
   _maxDistance: 20
   _currentDistance: 0
   _damage: 4
-  _effect: {fileID: 0}
 --- !u!135 &344584241176956767
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4974,16 +4972,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5409519019870665565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589471255087343236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a192303e573b8b0419ad7d76d9f697c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _soundEffect: {fileID: 8300000, guid: 42bb28af24a12d744a43d666ef8bb48b, type: 3}
