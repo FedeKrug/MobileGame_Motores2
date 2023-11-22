@@ -10,19 +10,31 @@ public class ItemUI : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _itemName;
 	[SerializeField] private TextMeshProUGUI _itemPrice;
 	[SerializeField] private Button _itemButton;
-	public bool onStock;
+	private int _priceValue;
+
+	private void Start()
+	{
+		_priceValue = int.Parse(_itemPrice.text);
+	}
 	public void SetItem(StoreItemSO itemToRepresent)
 	{
 		_icon.sprite = itemToRepresent.itemSprite;
 		_itemName.text = itemToRepresent.itemName;
-		_itemPrice.text = string.Format("${00:00}", itemToRepresent.itemPrice.ToString());
+		_itemPrice.text = itemToRepresent.itemPrice.ToString();
+		//_itemPrice.text = string.Format("${00:00}", itemToRepresent.itemPrice.ToString());
 		//_scoreText.text = string.Format("Coins: {0:000}", _saveData.coins);
-		_itemButton.enabled = onStock;
 	}
 
-	public void BuyItem(StoreItemSO itemToRepresent)
+	public void BuyItem()
 	{
-		onStock = false;
-		itemToRepresent.itemPrice -= DataManager.instance.data.coins;
+		if (DataManager.instance.data.coins < _priceValue)
+		{
+			Debug.Log("No tienes suficiente dinero, mira una ad para conseguir mas monedas");
+			return;
+		}
+		int newCoinsCant = DataManager.instance.data.coins -= _priceValue;
+		DataManager.instance.data.coins = newCoinsCant;
+		Debug.Log("Objeto comprado");
+		MenuManager.instance.UpdateMenuUI();
 	}
 }

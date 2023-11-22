@@ -6849,7 +6849,7 @@ GameObject:
   - component: {fileID: 870425712}
   - component: {fileID: 870425711}
   m_Layer: 5
-  m_Name: QuirButton
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7758,7 +7758,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 976631904}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1811723062}
+        m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
+        m_MethodName: ClearData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &976631904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12316,6 +12328,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4905262108528523056, guid: eb859da01c362134cb62ccaed58e3b06, type: 3}
   m_PrefabInstance: {fileID: 4905262110306075653}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1811723062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4905262108528523059, guid: eb859da01c362134cb62ccaed58e3b06, type: 3}
+  m_PrefabInstance: {fileID: 4905262110306075653}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274a2f61709237048841dd85c5a552e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1811737615
 GameObject:
   m_ObjectHideFlags: 0
@@ -14822,14 +14845,6 @@ PrefabInstance:
     - target: {fileID: 4905262108528523057, guid: eb859da01c362134cb62ccaed58e3b06, type: 3}
       propertyPath: m_Name
       value: DataManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905262108528523059, guid: eb859da01c362134cb62ccaed58e3b06, type: 3}
-      propertyPath: data.lvl
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905262108528523059, guid: eb859da01c362134cb62ccaed58e3b06, type: 3}
-      propertyPath: data.abilities.Array.size
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb859da01c362134cb62ccaed58e3b06, type: 3}

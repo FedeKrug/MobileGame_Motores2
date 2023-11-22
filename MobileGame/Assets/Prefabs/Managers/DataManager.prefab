@@ -48,5 +48,5 @@ MonoBehaviour:
     life: 100
     mana: 0
     abilities: []
-    lvl: 0
-    coins: 0
+    lvl: 1
+    coins: 1510
