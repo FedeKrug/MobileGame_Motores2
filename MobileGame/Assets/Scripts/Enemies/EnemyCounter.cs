@@ -8,6 +8,7 @@ public class EnemyCounter : MonoBehaviour
 	public bool areThereEnemiesInCounter = true;
 	public bool playerInCounter = false;
 	[SerializeField] private List<EnemyHealth> _enemiesInCounter = new();
+	[SerializeField] private List<Door> _doors;
 
 	public int EnemyCount
 	{
@@ -57,7 +58,13 @@ public class EnemyCounter : MonoBehaviour
 			playerInCounter = false;
 		}
 	}
-
+	private void OnTriggerStay(Collider other)
+	{
+		if (!areThereEnemiesInCounter)
+		{
+			OpenDoors();
+		}
+	}
 	private bool UpdateCounter()
 	{
 		if (_enemyCount <= 0)
@@ -67,6 +74,18 @@ public class EnemyCounter : MonoBehaviour
 		return playerInCounter;
 	}
 
+	private void OpenDoors()
+	{
+		if (_doors.Count != 0)
+		{
+
+			for (int i = 0; i < _doors.Count; i++)
+			{
+				_doors[i].GoTroughTheDoor();
+			}
+		}
+
+	}
 
 }
 

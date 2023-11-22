@@ -46,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
 			Debug.Log("Dead...");
 		}
 		UIManager.instance.UpdateLife();
+		FinishGameScreen.instance.GameOver(false);
 	}
 
 	public void IncreaseHealth(float increaseAmount)
