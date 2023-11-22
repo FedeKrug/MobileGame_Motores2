@@ -1522,6 +1522,9 @@ MonoBehaviour:
   _testBool: 0
   maxVelocity: 1
   maxSpeed: 1
+  _movementAnimParameter: isMoving
+  anim: {fileID: 6336580834255475901}
+  _damage: 8
 --- !u!136 &8652055194795468225
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1610,3 +1613,6 @@ MonoBehaviour:
   counterRef: {fileID: 0}
   _health: 50
   _dropRef: {fileID: 7597071325289999465}
+  _anim: {fileID: 6336580834255475901}
+  _hitAnimationTrigger: hit
+  _damageEffectTime: 0.2

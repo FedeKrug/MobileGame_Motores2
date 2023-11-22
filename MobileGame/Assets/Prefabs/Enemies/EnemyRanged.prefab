@@ -1394,6 +1394,9 @@ MonoBehaviour:
   _testBool: 0
   maxVelocity: 1
   maxSpeed: 1
+  _movementAnimParameter: isWalking
+  anim: {fileID: 9027875527084270890}
+  _damage: 3
 --- !u!136 &8652055194795468225
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1482,6 +1485,9 @@ MonoBehaviour:
   counterRef: {fileID: 0}
   _health: 50
   _dropRef: {fileID: 7597071325289999465}
+  _anim: {fileID: 9027875527084270890}
+  _hitAnimationTrigger: hit
+  _damageEffectTime: 0.2
 --- !u!1 &8726006930690693800
 GameObject:
   m_ObjectHideFlags: 0

@@ -12962,11 +12962,19 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 300020969362540812, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 300020969362540812, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 627212629}
+      objectReference: {fileID: 0}
     - target: {fileID: 300020969362540812, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 300020969362540812, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 300020969362540812, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
@@ -12978,7 +12986,15 @@ PrefabInstance:
       value: UnityEngine.Behaviour, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 300020969362540812, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 300020969362540812, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 300020969362540812, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 300020969362540812, guid: 82dae940f3d7ac14096898bfc51a3b30, type: 3}

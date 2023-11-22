@@ -30,6 +30,7 @@ public class ItemUI : MonoBehaviour
 		if (DataManager.instance.data.coins < _priceValue)
 		{
 			Debug.Log("No tienes suficiente dinero, mira una ad para conseguir mas monedas");
+			AdManager.instance.GetComponent<RewardedAd>().LoadAd();
 			return;
 		}
 		int newCoinsCant = DataManager.instance.data.coins -= _priceValue;

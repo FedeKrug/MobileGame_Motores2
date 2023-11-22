@@ -11,6 +11,9 @@ public abstract class EnemyBehaviour : MonoBehaviour
 	
 	[SerializeField] protected float maxVelocity;
 	[SerializeField] protected float maxSpeed;
+	[SerializeField] protected string _movementAnimParameter;
+	[SerializeField] protected Animator anim;
+	[SerializeField] protected float _damage;
 
 	public bool TestBool { get => _testBool; set => _testBool = value; }
 
@@ -31,6 +34,14 @@ public abstract class EnemyBehaviour : MonoBehaviour
 		
 	}
 
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag("Player"))
+		{
+			PlayerHealth.instance.TakeDamage(_damage);
+		}
+	}
+
 	void Seek(Vector3 target)
 	{
 		_target = GameManager.instance.PlayerPos.position;
@@ -39,7 +50,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
 
 		Vector3 steering = desired - _velocity;
 		steering = Vector3.ClampMagnitude(steering, maxSpeed);
-
+		anim.SetBool(_movementAnimParameter, _testBool);
 		AddForce(steering);
 	}
 	void Flee(Vector3 target)

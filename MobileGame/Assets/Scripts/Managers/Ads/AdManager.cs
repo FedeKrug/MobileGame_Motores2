@@ -7,10 +7,18 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener
 	[SerializeField] string _iOSGameId;
 	[SerializeField] bool _testMode = true;
 	private string _gameId;
-
+	public static AdManager instance;
 	void Awake()
 	{
 		InitializeAds();
+		if (instance == null)
+		{
+			instance = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
 	}
 
 	public void InitializeAds()

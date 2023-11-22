@@ -3,8 +3,20 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
 	private float _maxHealth;
+	public static PlayerHealth instance;
 
 
+	private void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+	}
 	public float MaxHealth
 	{
 		get => _maxHealth;
@@ -21,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
 	public void TakeDamage(float damage)
 	{
 		UIManager.instance.SaveData.life -= damage;
+
 		CheckDeath();
 
 	}

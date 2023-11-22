@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92803f43147964e4783cf4aea82d4bdf, type: 3}
   m_Name: PlayerStatsSO
   m_EditorClassIdentifier: 
-  healthPoints: 100
+  healthPointsHP: 50
   defPoints: 1
   atkPoints: 2
   atkCooldown: 1.5
   criticalHitRate: 5
-  specialDamage: 20
-  spcAtkCooldown: 8
+  specialDamageState: 20
+  spcAtkStateDuration: 8
   movementSpeed: 500
   currentLevel: 1
   expPoints: 0
