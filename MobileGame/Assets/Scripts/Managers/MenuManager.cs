@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 
 	[SerializeField] private TextMeshProUGUI[] _coinsCantText;
 	[SerializeField] private TextMeshProUGUI _lvlText;
+	SaveData _saveData;
 	private void Awake()
 	{
 		if (instance == null)
@@ -18,14 +19,13 @@ public class MenuManager : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
+		_saveData = DataManager.instance.data;
 	}
 
-	SaveData _saveData;
 
 	private void Start()
 	{
 		DataManager.instance.LoadData();
-		_saveData = DataManager.instance.data;
 		UpdateMenuUI();
 	}
 

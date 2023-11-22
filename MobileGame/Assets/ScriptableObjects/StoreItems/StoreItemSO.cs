@@ -8,4 +8,9 @@ public class StoreItemSO : ScriptableObject
     public int itemPrice;
     public Sprite itemSprite;
 
+    public void BuyItem()
+	{
+        itemPrice -= DataManager.instance.data.coins;
+        MenuManager.instance.UpdateMenuUI();
+	}
 }
