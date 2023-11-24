@@ -1,10 +1,14 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class PlayerHealth : MonoBehaviour
 {
 	private float _maxHealth;
 	public static PlayerHealth instance;
-
+	[SerializeField] private float _timeOfInvulnerability= 0.2f;
+	[SerializeField] private int _playerLayer = 7;
+	[SerializeField] private int _invecibilityLayer = 9;
 
 	private void Awake()
 	{
@@ -25,37 +29,45 @@ public class PlayerHealth : MonoBehaviour
 
 	private void Start()
 	{
-		_maxHealth = UIManager.instance.SaveData.life;
-		UIManager.instance.SaveData.life = _maxHealth;
+		_maxHealth = DataManager.instance.data.life;
+		DataManager.instance.data.life = _maxHealth;
 	}
 
 
 	public void TakeDamage(float damage)
 	{
-		UIManager.instance.SaveData.life -= damage;
-
+		DataManager.instance.data.life -= damage;
+		StartCoroutine(CO_useDamageEffect());
 		CheckDeath();
 
 	}
 
 	private void CheckDeath()
 	{
-		if (UIManager.instance.SaveData.life <= 0)
+		if (DataManager.instance.data.life <= 0)
 		{
 			//Die
 			Debug.Log("Dead...");
+		FinishGameScreen.instance.GameOver(false);
 		}
 		UIManager.instance.UpdateLife();
-		FinishGameScreen.instance.GameOver(false);
 	}
 
 	public void IncreaseHealth(float increaseAmount)
 	{
-		UIManager.instance.SaveData.life += increaseAmount;
-		if (UIManager.instance.SaveData.life >= _maxHealth)
+		DataManager.instance.data.life += increaseAmount;
+		if (DataManager.instance.data.life >= _maxHealth)
 		{
-			UIManager.instance.SaveData.life = _maxHealth;
+			DataManager.instance.data.life = _maxHealth;
 		}
 		UIManager.instance.UpdateLife();
 	}
+
+	private IEnumerator CO_useDamageEffect()
+	{
+		gameObject.layer = _invecibilityLayer;
+		yield return new WaitForSeconds(_timeOfInvulnerability);
+		gameObject.layer = _playerLayer;
+	}
+
 }
