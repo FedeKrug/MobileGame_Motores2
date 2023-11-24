@@ -3,15 +3,18 @@
 public class ChaseState : State
 {
 	[SerializeField] private State _attackState;
-	[SerializeField] private bool _isInAttackRange;
-
+	[SerializeField] public bool isInAttackRange;
+	[SerializeField] private IdleState _idleState;
 	public override State RunCurrentState()
 	{
-		if (_isInAttackRange)
+		if (isInAttackRange)
 		{
 			return _attackState;
 		}
-
-		return this;
+		else if (!isInAttackRange && !_idleState.canSeePlayer)
+		{
+			return _idleState;
+		}
+			return this;
 	}
 }

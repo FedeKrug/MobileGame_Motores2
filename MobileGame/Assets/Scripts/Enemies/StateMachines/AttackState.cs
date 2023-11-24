@@ -1,7 +1,22 @@
-﻿public class AttackState : State
+﻿using UnityEngine;
+
+public class AttackState : State
 {
+	[SerializeField] private ChaseState _chaseState;
+
+
+
 	public override State RunCurrentState()
 	{
-		return this;
+		if (_chaseState.isInAttackRange)
+		{
+
+			return this;
+		}
+		else
+		{
+			return _chaseState;
+		}
+
 	}
 }

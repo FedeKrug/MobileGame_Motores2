@@ -2,12 +2,12 @@
 public class IdleState : State
 {
 	[SerializeField] private State _chaseState;
-	[SerializeField] private bool _canSeePlayer;
+	[SerializeField] public bool canSeePlayer;
 
 
 	public override State RunCurrentState()
 	{
-		if (_canSeePlayer)
+		if (canSeePlayer)
 		{
 			return _chaseState;
 		}

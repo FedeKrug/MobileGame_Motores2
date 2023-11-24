@@ -2,7 +2,7 @@
 
 public class StateManager : MonoBehaviour
 {
-	private State _currentState;
+	[SerializeField] private State _currentState;
 	
 	private void Update()
 	{
