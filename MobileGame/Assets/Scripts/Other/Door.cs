@@ -17,16 +17,21 @@ public class Door : MonoBehaviour
 		FinishGameScreen.instance.GameOver(true);
 	}
 
-	public void GoTroughTheDoor()
+	private void OnTriggerEnter(Collider other)
 	{
-		if (_isTheLastDoor)
+		if (other.CompareTag("PlayerInteractor") && _isTheLastDoor)
 		{
 			FinishGame();
+		}
+	}
+
+	public void GoTroughTheDoor()
+	{
+		if (!_isTheLastDoor)
+		{
+		_parent.gameObject.SetActive(false);
 
 		}
-		else
-		{
-			_parent.gameObject.SetActive(false);
-		}
+
 	}
 }

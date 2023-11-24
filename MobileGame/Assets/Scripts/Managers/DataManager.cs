@@ -3,7 +3,7 @@ using UnityEngine;
 using System.IO;
 using System;
 
-[DefaultExecutionOrder(-10)]
+[DefaultExecutionOrder(-100)]
 public class DataManager : MonoBehaviour
 {
 	public static DataManager instance;
