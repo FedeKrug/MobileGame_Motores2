@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4226118623197566}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4777461600425180}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4105486914630632}
   - component: {fileID: 137889828543149406}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,10 +162,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4085869397129016}
   - component: {fileID: 111413649560378406}
-  - component: {fileID: 888768125}
-  m_Layer: 0
+  - component: {fileID: 2431722683876977636}
+  m_Layer: 3
   m_Name: Monster_Bat_Prefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,6 +185,7 @@ Transform:
   - {fileID: 4105486914630632}
   - {fileID: 4777461600425180}
   - {fileID: 2398721595372606295}
+  - {fileID: 555779108029885009}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
@@ -204,22 +205,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &888768125
-MonoBehaviour:
+--- !u!135 &2431722683876977636
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625221395402176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 655422320b754ed44be6a54ed6131f21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 3
-  _movementSpeed: 5100
-  _maxVelocity: 3
-  _offset: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1809875507653856
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4517809633083002}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +261,7 @@ GameObject:
   - component: {fileID: 4842883841442194089}
   - component: {fileID: 1804465671334582156}
   - component: {fileID: 5104558975811045814}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,8 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d41b279c0f4e94ca8e8c3f6e046c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canSeePlayer: 0
-  _chaseState: {fileID: 0}
+  enemyDetector: {fileID: 7057481051308334634}
+  _chaseState: {fileID: 5104558975811045814}
 --- !u!114 &5104558975811045814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,3 +326,62 @@ MonoBehaviour:
   _movementSpeed: 3
   _maxVelocity: 5
   _body: {fileID: 1625221395402176}
+--- !u!1 &6056432027993675661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 555779108029885009}
+  - component: {fileID: 811132650538281867}
+  - component: {fileID: 7057481051308334634}
+  m_Layer: 11
+  m_Name: EnemyDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &555779108029885009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056432027993675661}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4085869397129016}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &811132650538281867
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056432027993675661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &7057481051308334634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056432027993675661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32262673354e6f45908ecca9e16fce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDetected: 0

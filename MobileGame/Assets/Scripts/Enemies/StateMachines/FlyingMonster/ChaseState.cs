@@ -19,7 +19,7 @@ namespace Enemies.MonsterBat
 
 		public override State RunCurrentState()
 		{
-			if (!_idleState.canSeePlayer)
+			if (!_idleState.enemyDetector.playerDetected)
 			{
 				return _idleState;
 			}

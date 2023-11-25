@@ -8,11 +8,11 @@ namespace Enemies.MonsterBat
 
 	public class IdleState : State
 	{
-		public bool canSeePlayer;
+		public EnemyDetector enemyDetector;
 		[SerializeField] private ChaseState _chaseState;
 		public override State RunCurrentState()
 		{
-			if (canSeePlayer)
+			if (enemyDetector.playerDetected)
 			{
 				return _chaseState;
 			}
