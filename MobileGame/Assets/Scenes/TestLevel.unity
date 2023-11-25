@@ -13722,16 +13722,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655422320b754ed44be6a54ed6131f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  _attkRange: 5
-  _attckSpawnPoint: {fileID: 0}
-  isAlive: 0
-  _anim: {fileID: 0}
-  _speed: 5
-  _rangeToChase: 5
-  _rangeToAttack: 2
-  _source: {fileID: 0}
-  canMove: 1
+  _damage: 3
+  _movementSpeed: 5100
+  _maxVelocity: 3
+  _offset: 0
 --- !u!1001 &897974722
 PrefabInstance:
   m_ObjectHideFlags: 0
