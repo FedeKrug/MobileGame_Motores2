@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public abstract class EnemyBehaviour : MonoBehaviour
 {
 	Vector3 _velocity;
