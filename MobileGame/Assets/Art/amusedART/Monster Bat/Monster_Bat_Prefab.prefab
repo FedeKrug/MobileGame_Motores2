@@ -162,6 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4085869397129016}
   - component: {fileID: 111413649560378406}
+  - component: {fileID: 888768125}
   m_Layer: 0
   m_Name: Monster_Bat_Prefab
   m_TagString: Untagged
@@ -176,10 +177,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625221395402176}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029802318}
+  m_LocalRotation: {x: -0, y: -1, z: 0, w: -0.0000001872535}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4105486914630632}
   - {fileID: 4777461600425180}
@@ -203,6 +204,22 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &888768125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625221395402176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655422320b754ed44be6a54ed6131f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 3
+  _movementSpeed: 5100
+  _maxVelocity: 3
+  _offset: 0
 --- !u!1 &1809875507653856
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +261,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2398721595372606295}
   - component: {fileID: 4842883841442194089}
+  - component: {fileID: 1804465671334582156}
+  - component: {fileID: 5104558975811045814}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -278,4 +297,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec47cd8cd1a734b8fe501da56122f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentState: {fileID: 0}
+  _currentState: {fileID: 1804465671334582156}
+--- !u!114 &1804465671334582156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4840485009013472782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d41b279c0f4e94ca8e8c3f6e046c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSeePlayer: 0
+  _chaseState: {fileID: 0}
+--- !u!114 &5104558975811045814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4840485009013472782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bacabef4579e34d8872765a4c07a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _idleState: {fileID: 1804465671334582156}
+  _movementSpeed: 3
+  _maxVelocity: 5
+  _body: {fileID: 1625221395402176}

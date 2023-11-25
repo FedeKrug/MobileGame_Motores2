@@ -1,8 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
-public class IdleState : MonoBehaviour
+namespace Enemies.MonsterBat
 {
-    //Script Created
+
+	public class IdleState : State
+	{
+		public bool canSeePlayer;
+		[SerializeField] private ChaseState _chaseState;
+		public override State RunCurrentState()
+		{
+			if (canSeePlayer)
+			{
+				return _chaseState;
+			}
+			else
+			{
+
+			return this;
+			}
+		}
+	}
 }
