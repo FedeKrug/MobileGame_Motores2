@@ -16,7 +16,7 @@ public abstract class Enemy : MonoBehaviour
 	[SerializeField] protected Animator _anim;
 
 	[Header("NavMesh")]
-	[SerializeField] protected NavMeshAgent _agent;
+	protected NavMeshAgent _agent;
 	[SerializeField] protected float _speed = 5f;
 	[SerializeField] private float _rangeToChase = 5f;
 	[SerializeField] protected float _rangeToAttack = 2f;

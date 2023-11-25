@@ -4,7 +4,7 @@ public class ExplosiveEnemy : Enemy
 {
 	protected override void Move()
 	{
-		_anim.SetBool("InChaseRange", true);
+		//_anim.SetBool("InChaseRange", true);
 		_agent.SetDestination(_target.position);
 	}
 

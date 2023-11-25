@@ -13,8 +13,8 @@ namespace Enemies.Skeleton
 		{
 			if (_chaseState.isInAttackRange)
 			{
-
-				_anim.Play(_attackAnimation);
+				_anim.SetBool(_attackAnimation, true);
+				//_anim.Play(_attackAnimation);
 				return this;
 			}
 			else

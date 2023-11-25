@@ -6454,9 +6454,8 @@ MonoBehaviour:
   damage: 15
   _attkRange: 5
   _attckSpawnPoint: {fileID: 4907610543827193183}
-  isAlive: 0
+  isAlive: 1
   _anim: {fileID: 9027875527084270890}
-  _agent: {fileID: 1388100735073723820}
   _speed: 5
   _rangeToChase: 5
   _rangeToAttack: 2

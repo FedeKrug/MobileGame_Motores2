@@ -9680,7 +9680,7 @@ MonoBehaviour:
   _explosionEffect: {fileID: 4098058294035696864}
   _aSource: {fileID: 6275500195374465232}
   _explosionSound: {fileID: 8300000, guid: 828dda09b25059146b37c6de74ccf3ae, type: 3}
-  _spellMesh: {fileID: 0}
+  _spellMesh: {fileID: 7589471255087343236}
   _explosionForce: 3
   _explosionRadius: 3
   _explosionMod: 0.5
