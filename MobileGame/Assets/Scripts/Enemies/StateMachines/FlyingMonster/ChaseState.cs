@@ -14,6 +14,8 @@ namespace Enemies.MonsterBat
 		[SerializeField] private float _movementSpeed;
 		[SerializeField] private float _maxVelocity;
 		[SerializeField] private GameObject _body;
+		[SerializeField] private AttackState _attackState;
+		public EnemyDetector attackRangeDetector;
 		private Vector3 _velocity;
 		private Vector3 _target;
 
@@ -23,6 +25,12 @@ namespace Enemies.MonsterBat
 			{
 				return _idleState;
 			}
+
+			if (attackRangeDetector.playerDetected)
+			{
+				return _attackState;
+			}
+
 			else
 			{
 				//Chase
@@ -51,4 +59,5 @@ namespace Enemies.MonsterBat
 				_velocity = _velocity.normalized * _maxVelocity;
 		}
 	}
+
 }
