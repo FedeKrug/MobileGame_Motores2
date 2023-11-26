@@ -6,7 +6,7 @@ namespace Enemies.Golem
 	public class AttackState : State
 	{
 		[SerializeField] private ChaseState _chaseState;
-
+		[SerializeField] private Animator _anim;
 
 
 		public override State RunCurrentState()

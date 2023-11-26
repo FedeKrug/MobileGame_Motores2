@@ -5,8 +5,7 @@ namespace Enemies.Golem
 	public class IdleState : State
 	{
 		[SerializeField] private State _chaseState;
-		[SerializeField] public bool canSeePlayer;
-
+		public bool canSeePlayer;
 
 		public override State RunCurrentState()
 		{
