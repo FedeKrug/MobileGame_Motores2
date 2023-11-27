@@ -44,9 +44,9 @@ public class AudioManagerHelper : MonoBehaviour
 	}
 	private void ActiveVolume()
 	{
-		_volume.masterVolumeSlider.value = _masterVolumeHelper;
-		_volume.musicVolumeSlider.value = _musicVolumeHelper;
-		_volume.sfxVolumeSlider.value = _sfxVolumeHelper;
+		_volume.masterVolumeSlider.value = PlayerPrefs.GetFloat("VolumenMaestro");
+		_volume.musicVolumeSlider.value = PlayerPrefs.GetFloat("VolumenMusica");
+		_volume.sfxVolumeSlider.value = PlayerPrefs.GetFloat("VolumenEfectos");
 
 		_initVolumeIcon.sprite = _unmutedVolumeIcon;
 	}
@@ -59,5 +59,20 @@ public class AudioManagerHelper : MonoBehaviour
 
 		_volume.MuteAudio();
 		_initVolumeIcon.sprite = _mutedVolumeIcon;
+	}
+
+	public void SetMasterVolumePref()
+	{
+		PlayerPrefs.SetFloat("VolumenMaestro", _volume.masterVolumeSlider.value);
+	}
+
+	public void SetMusicVolumePref()
+	{
+		PlayerPrefs.SetFloat("VolumenMusica", _volume.musicVolumeSlider.value);
+	}
+
+	public void SetSFXVolumePref()
+	{
+		PlayerPrefs.SetFloat("VolumenEfectos", _volume.sfxVolumeSlider.value);
 	}
 }

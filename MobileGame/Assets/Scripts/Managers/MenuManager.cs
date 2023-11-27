@@ -35,7 +35,7 @@ public class MenuManager : MonoBehaviour
 		{
 			_coinsCantText[i].text = _saveData.coins.ToString();
 		}
-		_lvlText.text = _saveData.lvl.ToString();
+		//_lvlText.text = _saveData.lvl.ToString();
 
 	}
 
