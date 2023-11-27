@@ -31,7 +31,7 @@ public class EnemyCounter : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		EnemyBehaviour enemyRef = other.GetComponent<EnemyBehaviour>();
+		Enemy enemyRef = other.GetComponent<Enemy>();
 		if (enemyRef && !_enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
 		{
 			_enemiesInCounter.Add(other.GetComponent<EnemyHealth>());
@@ -40,10 +40,10 @@ public class EnemyCounter : MonoBehaviour
 		}
 		if (other.CompareTag("Player"))
 		{
-			for (int i = 0; i < _enemiesInCounter.Count; i++)
-			{
-				_enemiesInCounter[i].GetComponent<EnemyBehaviour>().TestBool = true;
-			}
+			//for (int i = 0; i < _enemiesInCounter.Count; i++)
+			//{
+			//	_enemiesInCounter[i].GetComponent<Enemy>().canMove = true;
+			//}
 			playerInCounter = true;
 		}
 	}
@@ -66,7 +66,7 @@ public class EnemyCounter : MonoBehaviour
 			playerInCounter = false;
 		}
 	}
-	
+
 	private bool UpdateCounter()
 	{
 		if (_enemyCount <= 0)
