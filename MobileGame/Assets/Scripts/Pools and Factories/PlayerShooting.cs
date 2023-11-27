@@ -55,7 +55,7 @@ public class PlayerShooting : MonoBehaviour
 
 		if (_timer <= 0)
 		{
-			Shoot(ProjectileFactory.instance.pool.GetObject().gameObject);
+			Shoot(ProjectileFactory.Instance.pool.GetObject().gameObject);
 		}
 	}
 

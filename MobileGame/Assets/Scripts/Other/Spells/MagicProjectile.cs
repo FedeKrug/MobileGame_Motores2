@@ -11,7 +11,7 @@ public abstract class MagicProjectile : MonoBehaviour
 		_currentDistance += distanceToTravel;
 		if (_currentDistance > _maxDistance)
 		{
-			ProjectileFactory.instance.ReturnProjectile(this);
+			ProjectileFactory.Instance.ReturnProjectile(this);
 		}
 	}
 
