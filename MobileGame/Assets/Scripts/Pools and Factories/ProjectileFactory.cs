@@ -14,13 +14,13 @@ public class ProjectileFactory : MonoBehaviour
     //este projectile de aca deberia ser generico
 
     #region Singleton
-    public static ProjectileFactory instance;
+    public static ProjectileFactory Instance;
 
     void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
 		{
-            instance = this;
+            Instance = this;
 		}
         else
 		{
