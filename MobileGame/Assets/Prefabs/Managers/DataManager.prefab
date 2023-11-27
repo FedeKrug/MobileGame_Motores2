@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5809843507464160506
+--- !u!1 &4905262108528523057
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5809843507464160484}
-  - component: {fileID: 5809843507464160507}
+  - component: {fileID: 4905262108528523056}
+  - component: {fileID: 4905262108528523059}
   m_Layer: 0
-  m_Name: playerJson
+  m_Name: DataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5809843507464160484
+--- !u!4 &4905262108528523056
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5809843507464160506}
+  m_GameObject: {fileID: 4905262108528523057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,24 +32,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5809843507464160507
+--- !u!114 &4905262108528523059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5809843507464160506}
+  m_GameObject: {fileID: 4905262108528523057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1752a5d115fb0c24f96f820748ad7e65, type: 3}
+  m_Script: {fileID: 11500000, guid: 274a2f61709237048841dd85c5a552e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data:
-    life: 150
+  data:
+    life: 100
     mana: 0
-    abilities:
-    - Run
-    - Jump
-    - Attack
-    lvl: 56
-    coins: 0
+    abilities: []
+    lvl: 1
+    coins: 1510

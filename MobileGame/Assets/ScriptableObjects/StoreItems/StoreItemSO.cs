@@ -8,4 +8,5 @@ public class StoreItemSO : ScriptableObject
     public int itemPrice;
     public Sprite itemSprite;
 
+ 
 }

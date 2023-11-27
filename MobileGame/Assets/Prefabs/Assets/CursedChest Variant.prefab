@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: _coinsAmount
       value: -60
       objectReference: {fileID: 0}
+    - target: {fileID: 1987067767473011628, guid: 7422861b14b08dd42b213f5b2af4619c, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987067767473011628, guid: 7422861b14b08dd42b213f5b2af4619c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.09371987
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987067767473011628, guid: 7422861b14b08dd42b213f5b2af4619c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2854162343431547882, guid: 7422861b14b08dd42b213f5b2af4619c, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -21,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3979462342640385156, guid: 7422861b14b08dd42b213f5b2af4619c, type: 3}
       propertyPath: m_Name
-      value: CursedChest
+      value: CursedChest Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3979462342640385156, guid: 7422861b14b08dd42b213f5b2af4619c, type: 3}
       propertyPath: m_Layer

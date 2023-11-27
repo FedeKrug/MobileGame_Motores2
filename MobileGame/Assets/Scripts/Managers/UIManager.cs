@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
+[DefaultExecutionOrder(-10)]
 public class UIManager : MonoBehaviour
 {
 	#region Singleton
@@ -19,7 +20,7 @@ public class UIManager : MonoBehaviour
 	}
 	#endregion
 
-	[SerializeField] private SaveData _saveData;
+	private SaveData _saveData;
 	[SerializeField] private TextMeshProUGUI _scoreText;
 	[SerializeField] private Image _healthBar;
 
@@ -36,6 +37,7 @@ public class UIManager : MonoBehaviour
 
 	private void Start()
 	{
+		_saveData = DataManager.instance.data;
 		_scoreText.text = string.Format("Coins: {0:000}", _saveData.coins);
 	}
 	public void TakeCoins(int coinAmount)

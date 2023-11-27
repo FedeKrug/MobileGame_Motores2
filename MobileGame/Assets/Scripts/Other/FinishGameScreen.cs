@@ -11,9 +11,21 @@ public class FinishGameScreen : MonoBehaviour
     [SerializeField] private GameObject _goalPanel;
 
     //TODO: Definir playerWon a partir del EnemyCounter
-    public bool playerWon;
 
-    public void GameOver()
+    public static FinishGameScreen instance;
+
+	private void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+	}
+	public void GameOver(bool playerWon)
 	{
         _goalPanel.SetActive(true);
         _goalText.text = playerWon ? _winMessage : _looseMessage;

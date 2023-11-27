@@ -8,6 +8,7 @@ public class EnemyCounter : MonoBehaviour
 	public bool areThereEnemiesInCounter = true;
 	public bool playerInCounter = false;
 	[SerializeField] private List<EnemyHealth> _enemiesInCounter = new();
+	[SerializeField] private List<Door> _doors;
 
 	public int EnemyCount
 	{
@@ -20,9 +21,17 @@ public class EnemyCounter : MonoBehaviour
 		set => _enemiesInCounter = value;
 	}
 
+	private void Update()
+	{
+		if (!areThereEnemiesInCounter && playerInCounter)
+		{
+			OpenDoors();
+		}
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
-		EnemyBehaviour enemyRef = other.GetComponent<EnemyBehaviour>();
+		Enemy enemyRef = other.GetComponent<Enemy>();
 		if (enemyRef && !_enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
 		{
 			_enemiesInCounter.Add(other.GetComponent<EnemyHealth>());
@@ -31,10 +40,10 @@ public class EnemyCounter : MonoBehaviour
 		}
 		if (other.CompareTag("Player"))
 		{
-			for (int i = 0; i < _enemiesInCounter.Count; i++)
-			{
-				_enemiesInCounter[i].GetComponent<EnemyBehaviour>().TestBool = true;
-			}
+			//for (int i = 0; i < _enemiesInCounter.Count; i++)
+			//{
+			//	_enemiesInCounter[i].GetComponent<Enemy>().canMove = true;
+			//}
 			playerInCounter = true;
 		}
 	}
@@ -67,6 +76,18 @@ public class EnemyCounter : MonoBehaviour
 		return playerInCounter;
 	}
 
+	private void OpenDoors()
+	{
+		if (_doors.Count != 0)
+		{
+
+			for (int i = 0; i < _doors.Count; i++)
+			{
+				_doors[i].GoTroughTheDoor();
+			}
+		}
+
+	}
 
 }
 

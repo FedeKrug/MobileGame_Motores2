@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
-
+using System.Collections;
 
 public class EnemyHealth : MonoBehaviour, IDamagable
 {
-	
+
 	[SerializeField] private Transform _deathPlace;
 	[SerializeField] private GameObject _meshToTurnOff;
 	[SerializeField] protected int _manaCharge;
@@ -12,15 +12,18 @@ public class EnemyHealth : MonoBehaviour, IDamagable
 	[SerializeField] protected EnemyCounter counterRef;
 	[SerializeField] protected float _health;
 	[SerializeField] protected EnemyDeathDrop _dropRef;
-
+	[SerializeField] protected Animator _anim;
+	[SerializeField] protected string _hitAnimationTrigger = "hit";
+	[SerializeField] protected float _damageEffectTime = 0.2f;
 	public void TakeDamage(float damage)
 	{
 		_health -= damage;
 		/*
 		 Feedback de daño
 		 */
-
+		StartCoroutine(CO_useDamageEffect());
 		CheckDeath();
+
 	}
 
 	protected void CheckDeath()
@@ -29,6 +32,13 @@ public class EnemyHealth : MonoBehaviour, IDamagable
 		{
 			Die();
 		}
+	}
+
+	IEnumerator CO_useDamageEffect()
+	{
+		_anim.SetTrigger(_hitAnimationTrigger);
+		yield return new WaitForSeconds(_damageEffectTime);
+		_anim.ResetTrigger(_hitAnimationTrigger);
 	}
 
 	protected void Die()

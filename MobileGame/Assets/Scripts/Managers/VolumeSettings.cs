@@ -1,35 +1,35 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-//using UnityEditor.iOS;
 
 public class VolumeSettings : MonoBehaviour
 {
 	[SerializeField] private AudioSource _source;
 	[SerializeField] private AudioMixer _mixer;
-	[SerializeField] private Slider _masterVolumeSlider, _musicVolumeSlider, _sfxVolumeSlider;
+	public Slider masterVolumeSlider, musicVolumeSlider, sfxVolumeSlider;
+
 
 	public void SetMasterVolume()
 	{
-		float volume = _masterVolumeSlider.value;
+		float volume = masterVolumeSlider.value;
 		_mixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
 	}
 	public void SetMusicVolume()
 	{
-		float volume = _musicVolumeSlider.value;
+		float volume = musicVolumeSlider.value;
 		_mixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
 	}
 	public void SetSfxVolume()
 	{
-		float volume = _sfxVolumeSlider.value;
+		float volume = sfxVolumeSlider.value;
 		_mixer.SetFloat("SfxVolume", Mathf.Log10(volume) * 20);
 	}
 
 	public void MuteAudio()
 	{
-		_sfxVolumeSlider.value = 0.00001f;
-		 _musicVolumeSlider.value = 0.00001f;
-		_masterVolumeSlider.value = 0.00001f;
+		sfxVolumeSlider.value = 0.00001f;
+		 musicVolumeSlider.value = 0.00001f;
+		masterVolumeSlider.value = 0.00001f;
 	}
 
 

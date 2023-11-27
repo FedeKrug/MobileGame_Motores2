@@ -4,16 +4,22 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class StamineSystem : MonoBehaviour
+public class StaminaSystem : MonoBehaviour
 {
     [SerializeField] int maxStamina = 10;
-    [SerializeField] float timeToRecharge = 10;
+
+    [SerializeField] float timeToRecharge = 10f;
+
     int currentStamina;
+    int notifId;
+
     DateTime nextStaminaTime;
     DateTime lastStaminaTime;
-    bool recharging;
+
     [SerializeField] TextMeshProUGUI staminaText = null;
     [SerializeField] TextMeshProUGUI timerText = null;
+
+    bool recharging;
 
     private void Start()
     {
@@ -22,10 +28,14 @@ public class StamineSystem : MonoBehaviour
             currentStamina = maxStamina;
             Save();
         }
+
         Load();
-        //currentStamina = maxStamina;
+
+        Debug.Log(nextStaminaTime.ToString());
         UpdateStaminaUI();
         UpdateTimerUI();
+
+        SendNotification();
 
         StartCoroutine(StaminaRecharging());
     }
@@ -40,21 +50,21 @@ public class StamineSystem : MonoBehaviour
 
             bool staminaAdd = false;
 
-            while(currentTime > nextTime)
+            while (currentTime > nextTime)
             {
-                if(currentStamina >= maxStamina)
+                if (currentStamina >= maxStamina)
                     break;
 
                 staminaAdd = true;
-                currentStamina++;
+                currentStamina += 1;
+
                 DateTime timeToAdd = nextTime;
 
-                if(lastStaminaTime > nextTime)
-                {
+                if (lastStaminaTime > nextTime)
                     timeToAdd = lastStaminaTime;
-                }
 
                 nextTime = AddDuration(timeToAdd, timeToRecharge);
+
             }
 
             if (staminaAdd)
@@ -62,11 +72,8 @@ public class StamineSystem : MonoBehaviour
                 lastStaminaTime = DateTime.Now;
                 nextStaminaTime = nextTime;
             }
-
-            UpdateTimerUI();
-            UpdateStaminaUI();
             Save();
-
+            UpdateStaminaUI();
             UpdateTimerUI();
             yield return new WaitForEndOfFrame();
         }
@@ -80,9 +87,9 @@ public class StamineSystem : MonoBehaviour
 
     public void UseStamina(int staminaToUse)
     {
-        if(currentStamina - staminaToUse < 0)
+        if (currentStamina - staminaToUse < 0)
         {
-            Debug.LogError("No tengo stamina");
+            Debug.LogError("No tengo suficiente stamina");
             return;
         }
 
@@ -93,6 +100,7 @@ public class StamineSystem : MonoBehaviour
             nextStaminaTime = AddDuration(DateTime.Now, timeToRecharge);
             StartCoroutine(StaminaRecharging());
         }
+        SendNotification();
         Save();
     }
 
@@ -100,8 +108,11 @@ public class StamineSystem : MonoBehaviour
     {
         currentStamina += staminaToAdd;
         UpdateStaminaUI();
-        UpdateTimerUI();
         Save();
+        if (currentStamina >= maxStamina)
+            UpdateTimerUI();
+
+        SendNotification();
     }
 
     void UpdateStaminaUI()
@@ -109,9 +120,9 @@ public class StamineSystem : MonoBehaviour
         staminaText.text = currentStamina.ToString() + "/" + maxStamina.ToString();
     }
 
-    private void UpdateTimerUI()
+    void UpdateTimerUI()
     {
-        if(currentStamina >= maxStamina)
+        if (currentStamina >= maxStamina)
         {
             timerText.text = "";
             return;
@@ -139,12 +150,19 @@ public class StamineSystem : MonoBehaviour
     DateTime StringToDateTime(string date)
     {
         if (string.IsNullOrEmpty(date))
-        {
             return DateTime.Now;
-        }
         else
-        {
             return DateTime.Parse(date);
-        }
+    }
+
+    void SendNotification()
+    {
+        NotificationManager.Instance.CancelNotif(notifId);
+
+        if (currentStamina >= maxStamina) return;
+
+        var timer = (nextStaminaTime - DateTime.Now).Seconds;
+        float timeToSend = (maxStamina - currentStamina - 1) * timeToRecharge + timer;
+        notifId = NotificationManager.Instance.CreateNotification("Ya tenés toda la Stamina", "Podés volver a jugar", timeToSend);
     }
 }
