@@ -27813,6 +27813,10 @@ PrefabInstance:
       propertyPath: _deathPlace
       value: 
       objectReference: {fileID: 2137183454}
+    - target: {fileID: 6585918270738578751, guid: cd4368eecf9e12f489d1d4c90807c9a8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 034c2d82f34bc89468238ffb0b55527d, type: 2}
     - target: {fileID: 6585918270748085913, guid: cd4368eecf9e12f489d1d4c90807c9a8, type: 3}
       propertyPath: m_Name
       value: Golem
