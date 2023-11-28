@@ -11,6 +11,7 @@ public class AudioManagerHelper : MonoBehaviour
 	[SerializeField] private Sprite _unmutedVolumeIcon, _mutedVolumeIcon;
 	[SerializeField] private Image _initVolumeIcon;
 	[SerializeField] private VolumeSettings _volume;
+	private float _masterVolumeHelper, _musicVolumeHelper, _sfxVolumeHelper;
 
 	public bool mutedVolume;
 
@@ -42,22 +43,22 @@ public class AudioManagerHelper : MonoBehaviour
 	}
 	private void ActiveVolume()
 	{
-		_volume.masterVolumeSlider.value = PlayerPrefs.GetFloat("VolumenMaestro");
-		_volume.musicVolumeSlider.value = PlayerPrefs.GetFloat("VolumenMusica");
-		_volume.sfxVolumeSlider.value = PlayerPrefs.GetFloat("VolumenEfectos");
+		_volume.masterVolumeSlider.value = _masterVolumeHelper;
+		_volume.musicVolumeSlider.value = _musicVolumeHelper;
+		_volume.sfxVolumeSlider.value = _sfxVolumeHelper;
 
 		_initVolumeIcon.sprite = _unmutedVolumeIcon;
 	}
 
 	private void MuteVolume()
 	{
-		//_masterVolumeHelper = _volume.masterVolumeSlider.value;
-		//_musicVolumeHelper = _volume.musicVolumeSlider.value;
-		//_sfxVolumeHelper = _volume.sfxVolumeSlider.value;
+		_masterVolumeHelper = _volume.masterVolumeSlider.value;
+		_musicVolumeHelper = _volume.musicVolumeSlider.value;
+		_sfxVolumeHelper = _volume.sfxVolumeSlider.value;
 
 		_volume.MuteAudio();
 		_initVolumeIcon.sprite = _mutedVolumeIcon;
 	}
 
-	
+
 }

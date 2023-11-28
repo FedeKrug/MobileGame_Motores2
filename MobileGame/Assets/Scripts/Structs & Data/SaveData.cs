@@ -9,7 +9,6 @@ public class SaveData
 	public float life = 100;
 	public float mana;
 	public string[] abilities;
-	public int lvl;
 
 	public int coins;
 
