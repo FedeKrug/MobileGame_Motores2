@@ -4274,7 +4274,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 750508366}
   m_HandleRect: {fileID: 1811737616}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.3
@@ -4293,9 +4293,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4378849802504003263}
-        m_TargetAssemblyTypeName: AudioManagerHelper, Assembly-CSharp
-        m_MethodName: SetMusicVolumePref
+      - m_Target: {fileID: 4378849802504003265}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: SetMusicVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6291,7 +6291,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 590497100}
   m_HandleRect: {fileID: 622780440}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.3
@@ -6310,9 +6310,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4378849802504003263}
-        m_TargetAssemblyTypeName: AudioManagerHelper, Assembly-CSharp
-        m_MethodName: SetSFXVolumePref
+      - m_Target: {fileID: 4378849802504003265}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: SetSfxVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7222,9 +7222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ead71429f024bc4a93839327b361775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterVol: {fileID: 1429322901}
-  musicVol: {fileID: 730376805}
-  SFXVol: {fileID: 914729937}
+  _volume: {fileID: 4378849802504003265}
 --- !u!1 &1072521096
 GameObject:
   m_ObjectHideFlags: 0
@@ -9503,10 +9501,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 992538931}
   m_HandleRect: {fileID: 702515831}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.006
+  m_Value: 0.2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -9522,9 +9520,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4378849802504003263}
-        m_TargetAssemblyTypeName: AudioManagerHelper, Assembly-CSharp
-        m_MethodName: SetMasterVolumePref
+      - m_Target: {fileID: 4378849802504003265}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: SetMasterVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12705,6 +12703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feddca49c05db0b4b9202cda83810f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoBoton: {fileID: 2013028954}
 --- !u!82 &2013028954
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13188,6 +13187,10 @@ PrefabInstance:
       propertyPath: _masterVolumeSlider
       value: 
       objectReference: {fileID: 1429322901}
+    - target: {fileID: 1512385373436462668, guid: 1643ae9d43fbb5041a471bffc5328a3b, type: 3}
+      propertyPath: _playerPrefSettings
+      value: 
+      objectReference: {fileID: 1038457013}
     - target: {fileID: 4378849802484408210, guid: 1643ae9d43fbb5041a471bffc5328a3b, type: 3}
       propertyPath: m_RootOrder
       value: 0

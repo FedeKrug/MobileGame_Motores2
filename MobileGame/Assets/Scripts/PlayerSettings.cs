@@ -3,28 +3,29 @@ using UnityEngine.UI;
 
 public class PlayerSettings : MonoBehaviour
 {
-    [SerializeField] private Slider masterVol;
-    [SerializeField] private Slider musicVol;
-    [SerializeField] private Slider SFXVol;
-    void Start()
+   
+    [SerializeField] private VolumeSettings _volume;
+
+
+	void Start()
     {
-        masterVol.value = PlayerPrefs.GetFloat("VolumenMaestro");
-        musicVol.value = PlayerPrefs.GetFloat("VolumenMusica");
-        SFXVol.value = PlayerPrefs.GetFloat("VolumenEfectos");
+        _volume.masterVolumeSlider.value = PlayerPrefs.GetFloat("VolumenMaestro");
+        _volume.musicVolumeSlider.value = PlayerPrefs.GetFloat("VolumenMusica");
+        _volume.sfxVolumeSlider.value = PlayerPrefs.GetFloat("VolumenEfectos");
     }
 
     public void SetMasterVolumePref()
     {
-        PlayerPrefs.SetFloat("VolumenMaestro", masterVol.value);
+        PlayerPrefs.SetFloat("VolumenMaestro", _volume.masterVolumeSlider.value);
     }
 
     public void SetMusicVolumePref()
     {
-        PlayerPrefs.SetFloat("VolumenMusica", musicVol.value);
+        PlayerPrefs.SetFloat("VolumenMusica", _volume.musicVolumeSlider.value);
     }
 
     public void SetSFXVolumePref()
     {
-        PlayerPrefs.SetFloat("VolumenEfectos", SFXVol.value);
+        PlayerPrefs.SetFloat("VolumenEfectos", _volume.sfxVolumeSlider.value);
     }
 }
