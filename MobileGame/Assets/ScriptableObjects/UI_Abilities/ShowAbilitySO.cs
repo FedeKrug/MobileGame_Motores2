@@ -5,7 +5,6 @@ public class ShowAbilitySO : MonoBehaviour
 {
 	[Header("Scriptable Object Refs:")]
 	[SerializeField] private AbilitiesSO _abilityRef;
-	[SerializeField] private Image _icon;
 	[SerializeField] private TextMeshProUGUI _textMastery;
 	[SerializeField] private TextMeshProUGUI _textName;
 
@@ -14,16 +13,8 @@ public class ShowAbilitySO : MonoBehaviour
 	private string _textMasteryInit = "";
 	private string _textNameInit = "";
 
-	[Space(10)]
-	[Header("Selection & Interactions:")]
-	[SerializeField, Tooltip("TODO: Modificar width y height cuando es seleccionado")] private RectTransform _iconRTransform;
-	[SerializeField] private float _initWidth = 60, _initHeight = 60, _modWidth, _modHeight;
-	private Rect _rTransform;
-
 	private void Start()
 	{
-		_rTransform.width = _initWidth;
-		_rTransform.height = _initHeight;
 		_textMastery.text = _textMasteryInit;
 		_textName.text = _textNameInit;
 	}
@@ -31,19 +22,12 @@ public class ShowAbilitySO : MonoBehaviour
 
 	public void Select()
 	{
-		_icon = _abilityRef.abilityIcon;
 		_textMastery.text = _abilityRef.abilityMastery.ToString();
 		_textName.text = _abilityRef.abilityName;
-
-		_rTransform.width = _modWidth;
-		_rTransform.height = _modHeight;
 	}
 
 	public void Deselect()
 	{
-		_rTransform.width = _initWidth;
-		_rTransform.height = _initHeight;
-
 		_textMastery.text = _textMasteryInit;
 		_textName.text = _textNameInit;
 
