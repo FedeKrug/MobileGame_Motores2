@@ -8,10 +8,9 @@ using TMPro;
 [CreateAssetMenu(fileName ="new Ability", menuName ="Scriptable Objects/Ability")]
 public class AbilitiesSO : ScriptableObject
 {
-	public Image abilityIcon;
 	public int abilityMastery;
 	public string abilityName;
-
+	public StoreItemSO storeRef;
 }
 
 

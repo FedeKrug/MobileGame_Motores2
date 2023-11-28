@@ -15,3 +15,4 @@ MonoBehaviour:
   abilityIcon: {fileID: 0}
   abilityMastery: 280
   abilityName: SpATK
+  storeRef: {fileID: 11400000, guid: b62d347d73cc0964498473778603011a, type: 2}

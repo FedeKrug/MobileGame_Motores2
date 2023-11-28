@@ -3,11 +3,6 @@
 public class TabBar : MonoBehaviour
 {
 	[SerializeField] private ShowAbilitySO[] _ablities;
-
-	public void SelectedEffect()
-	{
-
-	}
 	public void DeselectedEffect(int index)
 	{
 		for (int i=0; i<_ablities.Length; i++)

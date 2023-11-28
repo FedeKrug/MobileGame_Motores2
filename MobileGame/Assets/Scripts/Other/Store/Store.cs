@@ -16,7 +16,12 @@ public class Store : MonoBehaviour
         {
             var newObj = Instantiate(prefab, parent);
             newObj.SetItem(items[i]);
+            if (newObj.BuyItem())
+			{
+                items[i].abilityRef.abilityMastery += items[i].itemBoost ;
+			}
         }
     }
+	
 
 }

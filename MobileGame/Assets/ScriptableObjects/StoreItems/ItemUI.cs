@@ -11,6 +11,7 @@ public class ItemUI : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _itemPrice;
 	[SerializeField] private Button _itemButton;
 	private int _priceValue;
+	[HideInInspector] public int abilityMastery;
 
 	private void Start()
 	{
@@ -19,23 +20,28 @@ public class ItemUI : MonoBehaviour
 	public void SetItem(StoreItemSO itemToRepresent)
 	{
 		_icon.sprite = itemToRepresent.itemSprite;
-		_itemName.text = itemToRepresent.itemName;
+		_itemName.text = itemToRepresent.abilityRef.name + " Boost";
 		_itemPrice.text = itemToRepresent.itemPrice.ToString();
-		//_itemPrice.text = string.Format("${00:00}", itemToRepresent.itemPrice.ToString());
-		//_scoreText.text = string.Format("Coins: {0:000}", _saveData.coins);
 	}
 
-	public void BuyItem()
+	public bool BuyItem()
 	{
 		if (DataManager.instance.data.coins < _priceValue)
 		{
 			Debug.Log("No tienes suficiente dinero, mira una ad para conseguir mas monedas");
 			AdManager.instance.GetComponent<RewardedAd>().LoadAd();
-			return;
+			return false;
 		}
-		int newCoinsCant = DataManager.instance.data.coins -= _priceValue;
-		DataManager.instance.data.coins = newCoinsCant;
-		Debug.Log("Objeto comprado");
-		MenuManager.instance.UpdateMenuUI();
+		else
+		{
+
+			int newCoinsCant = DataManager.instance.data.coins -= _priceValue;
+			DataManager.instance.data.coins = newCoinsCant;
+			Debug.Log("Objeto comprado");
+			//Feedback de compra de objeto
+
+			MenuManager.instance.UpdateMenuUI();
+			return true;
+		}
 	}
 }

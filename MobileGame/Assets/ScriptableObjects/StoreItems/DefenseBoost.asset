@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f1fc37ffd8958458f9842a05d34d87, type: 3}
   m_Name: DefenseBoost
   m_EditorClassIdentifier: 
-  itemName: DFBoost
-  itemDescription: You'll be more strong with this!!
   itemPrice: 30
+  itemBoost: 50
   itemSprite: {fileID: 21300000, guid: fe4bc6115c467e34ca32a4b7b6136877, type: 3}
+  abilityRef: {fileID: 11400000, guid: 2cfdb96b899ea6e41abb70a3d22c36e9, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f1fc37ffd8958458f9842a05d34d87, type: 3}
   m_Name: AtkBoost
   m_EditorClassIdentifier: 
-  itemName: ATKBoost
-  itemDescription: You'll attack harder with this!!
   itemPrice: 50
+  itemBoost: 30
   itemSprite: {fileID: 21300000, guid: 3d8c3b3d3a7099947bdbccd1532ef2b4, type: 3}
+  abilityRef: {fileID: 11400000, guid: 28f64ca82be904041807b3b2ef23f703, type: 2}
