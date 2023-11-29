@@ -12,6 +12,7 @@ public class PlayerAutoAim : MonoBehaviour
 
 	private void OnEnable()
 	{
+		FindClosestEnemy();
 		closestEnemy = FindClosestEnemy();
 	}
 	private void Update()
@@ -26,15 +27,15 @@ public class PlayerAutoAim : MonoBehaviour
 
 	private EnemyHealth FindClosestEnemy()
 	{
+
+		// Encuentra el enemigo más cercano al jugador.
+		float closestDistance = float.MaxValue;
+		EnemyHealth closestEnemy = null;
 		for (int i = 0; i < _enemiesTotalAmount.Length; i++)
 		{
 			_enemiesTotalAmount[i] = _playerShootingRef.EnemyCounterRef.EnemiesInCounter[i];
 
 		}
-
-		// Encuentra el enemigo más cercano al jugador.
-		float closestDistance = float.MaxValue;
-		EnemyHealth closestEnemy = null;
 
 		for (int i = 0; i < _enemiesTotalAmount.Length; i++)
 		{

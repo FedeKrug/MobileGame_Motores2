@@ -21,14 +21,6 @@ public class EnemyCounter : MonoBehaviour
 		set => _enemiesInCounter = value;
 	}
 
-	private void Update()
-	{
-		if (!areThereEnemiesInCounter && playerInCounter)
-		{
-			OpenDoors();
-		}
-	}
-
 	private void OnTriggerEnter(Collider other)
 	{
 		Enemy enemyRef = other.GetComponent<Enemy>();
@@ -64,6 +56,7 @@ public class EnemyCounter : MonoBehaviour
 		if (_enemyCount <= 0)
 		{
 			areThereEnemiesInCounter = false;
+			OpenDoors();
 		}
 		return playerInCounter;
 	}

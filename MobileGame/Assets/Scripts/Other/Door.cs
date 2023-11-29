@@ -24,11 +24,7 @@ public class Door : MonoBehaviour
 
 	public void GoTroughTheDoor()
 	{
-		if (!_isTheLastDoor)
-		{
-			_parent.gameObject.SetActive(false);
-
-		}
-
+		if (_isTheLastDoor) return;
+		_parent.gameObject.SetActive(false);
 	}
 }

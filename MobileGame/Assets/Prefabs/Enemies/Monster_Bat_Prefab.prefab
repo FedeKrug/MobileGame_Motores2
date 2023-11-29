@@ -95,7 +95,6 @@ MonoBehaviour:
   _damage: 3
   _chaseState: {fileID: 2836599477018933430}
   _attackCooldown: 0.5
-  _attackRangeDetector: {fileID: 1701149512083807255}
 --- !u!1 &3856890745368012429
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7026807902490280680}
   - component: {fileID: 6945478013627548766}
+  - component: {fileID: 8233410142155414817}
   m_Layer: 3
   m_Name: Bat
   m_TagString: Untagged
@@ -274,6 +274,26 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116093546, y: 0.000000044703484, z: 0.00968793}
     m_Extent: {x: 0.32626763, y: 0.37760997, z: 0.23880383}
   m_DirtyAABB: 0
+--- !u!95 &8233410142155414817
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029635809896993770}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54c35469e9dc5f44fa24639d9f93f647, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7029750909933060624
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,8 +367,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7026791305447065144}
-  - component: {fileID: 6917946267890314534}
   - component: {fileID: 4626779565392747236}
+  - component: {fileID: 8741073287545803612}
+  - component: {fileID: 566646882476574628}
+  - component: {fileID: 5763803494521771259}
   m_Layer: 3
   m_Name: Monster_Bat_Prefab
   m_TagString: Enemy
@@ -363,7 +385,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7029959884318588096}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029802318}
+  m_LocalRotation: {x: -0, y: -1, z: 0, w: -0.0000001872535}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
@@ -376,22 +398,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
---- !u!111 &6917946267890314534
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7029959884318588096}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: b13df63982ffc744db2c0809b4977e14, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: b13df63982ffc744db2c0809b4977e14, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!135 &4626779565392747236
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -405,6 +411,61 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &8741073287545803612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029959884318588096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab3e524dc313654081e964504c13ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathPlace: {fileID: 0}
+  _meshToTurnOff: {fileID: 7029635809896993770}
+  _manaCharge: 60
+  counterRef: {fileID: 0}
+  _health: 20
+  _dropRef: {fileID: 5763803494521771259}
+  _anim: {fileID: 8233410142155414817}
+  _hitAnimationTrigger: hit
+  _damageEffectTime: 0.2
+--- !u!111 &566646882476574628
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029959884318588096}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 843811791f6aa5249bae1ee97f983749, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 843811791f6aa5249bae1ee97f983749, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &5763803494521771259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029959884318588096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807edcae490e4dc4aa0fb75563b4f71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minDropAmount: 1
+  _maxDropAmount: 5
+  _objectsToDrop:
+  - {fileID: 1177541165076663029, guid: 36c487fb35831d94eab6dafc5fbb5aea, type: 3}
+  - {fileID: 8131432372990651020, guid: 17ff938d5f140c4458d46bf0b8e97dad, type: 3}
+  - {fileID: 1177541165076663029, guid: 36c487fb35831d94eab6dafc5fbb5aea, type: 3}
 --- !u!1 &7931254476904606660
 GameObject:
   m_ObjectHideFlags: 0
