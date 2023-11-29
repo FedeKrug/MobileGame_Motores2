@@ -6,7 +6,14 @@ public class EnemyGolem : Enemy
 {
 	public override void animationAttack()
 	{
-		throw new System.NotImplementedException();
+		Collider[] hitObjs = Physics.OverlapSphere(_attckSpawnPoint.position, _attkRange);
+		foreach (var obj in hitObjs)
+		{
+			if (obj.GetComponent<PlayerHealth>())
+			{
+				PlayerHealth.instance.TakeDamage(damage);
+			}
+		}
 	}
 
 	public override void Death()

@@ -13,7 +13,7 @@ namespace Enemies.Golem
 		{
 			if (_chaseState.isInAttackRange)
 			{
-
+				
 				return this;
 			}
 			else

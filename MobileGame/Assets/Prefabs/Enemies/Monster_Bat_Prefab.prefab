@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 8741073287545803612}
   - component: {fileID: 566646882476574628}
   - component: {fileID: 5763803494521771259}
+  - component: {fileID: 1374039698}
   m_Layer: 3
   m_Name: Monster_Bat_Prefab
   m_TagString: Enemy
@@ -466,6 +467,22 @@ MonoBehaviour:
   - {fileID: 1177541165076663029, guid: 36c487fb35831d94eab6dafc5fbb5aea, type: 3}
   - {fileID: 8131432372990651020, guid: 17ff938d5f140c4458d46bf0b8e97dad, type: 3}
   - {fileID: 1177541165076663029, guid: 36c487fb35831d94eab6dafc5fbb5aea, type: 3}
+--- !u!54 &1374039698
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029959884318588096}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7931254476904606660
 GameObject:
   m_ObjectHideFlags: 0

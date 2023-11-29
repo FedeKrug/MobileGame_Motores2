@@ -23,7 +23,7 @@ public class EnemyCounter : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		Enemy enemyRef = other.GetComponent<Enemy>();
+		EnemyHealth enemyRef = other.GetComponent<EnemyHealth>();
 		if (enemyRef && !_enemiesInCounter.Contains(other.GetComponent<EnemyHealth>()))
 		{
 			_enemiesInCounter.Add(other.GetComponent<EnemyHealth>());
@@ -56,7 +56,11 @@ public class EnemyCounter : MonoBehaviour
 		if (_enemyCount <= 0)
 		{
 			areThereEnemiesInCounter = false;
+			if (_doors.Count > 0)
+			{
+
 			OpenDoors();
+			}
 		}
 		return playerInCounter;
 	}
