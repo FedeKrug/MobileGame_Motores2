@@ -6,11 +6,8 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
 	[SerializeField] private bool _isTheLastDoor = false;
-	private Transform _parent;
-	private void Start()
-	{
-		_parent = GetComponentInParent<Transform>();
-	}
+	[SerializeField] private Transform _parent;
+
 
 	public void FinishGame()
 	{
@@ -29,7 +26,7 @@ public class Door : MonoBehaviour
 	{
 		if (!_isTheLastDoor)
 		{
-		_parent.gameObject.SetActive(false);
+			_parent.gameObject.SetActive(false);
 
 		}
 

@@ -40,10 +40,6 @@ public class EnemyCounter : MonoBehaviour
 		}
 		if (other.CompareTag("Player"))
 		{
-			//for (int i = 0; i < _enemiesInCounter.Count; i++)
-			//{
-			//	_enemiesInCounter[i].GetComponent<Enemy>().canMove = true;
-			//}
 			playerInCounter = true;
 		}
 	}
@@ -59,10 +55,6 @@ public class EnemyCounter : MonoBehaviour
 		}
 		if (other.CompareTag("Player"))
 		{
-			for (int i = 0; i < _enemiesInCounter.Count; i++)
-			{
-				_enemiesInCounter[i].GetComponent<EnemyBehaviour>().TestBool = false;
-			}
 			playerInCounter = false;
 		}
 	}

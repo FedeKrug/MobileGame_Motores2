@@ -5440,6 +5440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64d6014555b29748b6a28c0b1d99dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 3579680673077732608}
 --- !u!1 &2468428308346220660
 GameObject:
   m_ObjectHideFlags: 0
@@ -5458,7 +5459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4907610543827193183
 Transform:
   m_ObjectHideFlags: 0
@@ -5557,7 +5558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3890846035261390447
 Transform:
   m_ObjectHideFlags: 0
@@ -6458,7 +6459,7 @@ MonoBehaviour:
   _anim: {fileID: 9027875527084270890}
   _speed: 5
   _rangeToChase: 5
-  _rangeToAttack: 2
+  _rangeToAttack: 3
   _source: {fileID: 3802020989578316533}
   canMove: 1
 --- !u!136 &8652055194795468225

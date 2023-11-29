@@ -2,9 +2,10 @@
 
 public class ExplosiveEnemy : Enemy
 {
+	
 	protected override void Move()
 	{
-		//_anim.SetBool("InChaseRange", true);
+		_anim.SetBool("isWalking", true);
 		_agent.SetDestination(_target.position);
 	}
 
@@ -12,6 +13,7 @@ public class ExplosiveEnemy : Enemy
 	{
 		if (_distance <= Mathf.Pow(_rangeToAttack, 2))
 		{
+			Debug.Log("Attack");
 			return true;
 		}
 		else
@@ -21,7 +23,7 @@ public class ExplosiveEnemy : Enemy
 	}
 	protected override void Attack()
 	{
-		_anim.SetBool("InAttackRange", true);
+		_anim.SetBool("Attack", true);
 	}
 
 

@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour, IDamagable
 		_anim.ResetTrigger(_hitAnimationTrigger);
 	}
 
-	protected void Die()
+	public void Die()
 	{
 		_meshToTurnOff.SetActive(false);
 		Vector3 lastPos = new(transform.position.x, 1.5f, transform.position.z);
