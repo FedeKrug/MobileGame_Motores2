@@ -106,13 +106,17 @@ public class StaminaSystem : MonoBehaviour
 
     public void RechargeStamina(int staminaToAdd)
     {
-        currentStamina += staminaToAdd;
+        int rechargedStamina = currentStamina += staminaToAdd;
         UpdateStaminaUI();
         Save();
-        if (currentStamina >= maxStamina)
+        if (rechargedStamina >= maxStamina)
+		{
+            rechargedStamina = maxStamina;
             UpdateTimerUI();
+		}
 
         SendNotification();
+
     }
 
     void UpdateStaminaUI()
