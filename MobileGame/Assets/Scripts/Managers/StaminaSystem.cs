@@ -6,167 +6,172 @@ using System;
 
 public class StaminaSystem : MonoBehaviour
 {
-    [SerializeField] int maxStamina = 10;
+	[SerializeField] int maxStamina = 10;
 
-    [SerializeField] float timeToRecharge = 10f;
+	[SerializeField] float timeToRecharge = 10f;
 
-    int currentStamina;
-    int notifId;
+	int currentStamina;
+	int notifId;
 
-    DateTime nextStaminaTime;
-    DateTime lastStaminaTime;
+	DateTime nextStaminaTime;
+	DateTime lastStaminaTime;
 
-    [SerializeField] TextMeshProUGUI staminaText = null;
-    [SerializeField] TextMeshProUGUI timerText = null;
+	[SerializeField] TextMeshProUGUI staminaText = null;
+	[SerializeField] TextMeshProUGUI timerText = null;
 
-    bool recharging;
+	bool recharging;
 
-    private void Start()
-    {
-        if (!PlayerPrefs.HasKey("CurrentStamina"))
-        {
-            currentStamina = maxStamina;
-            Save();
-        }
-
-        Load();
-
-        Debug.Log(nextStaminaTime.ToString());
-        UpdateStaminaUI();
-        UpdateTimerUI();
-
-        SendNotification();
-
-        StartCoroutine(StaminaRecharging());
-    }
-
-    IEnumerator StaminaRecharging()
-    {
-        recharging = true;
-        while (currentStamina < maxStamina)
-        {
-            DateTime currentTime = DateTime.Now;
-            DateTime nextTime = nextStaminaTime;
-
-            bool staminaAdd = false;
-
-            while (currentTime > nextTime)
-            {
-                if (currentStamina >= maxStamina)
-                    break;
-
-                staminaAdd = true;
-                currentStamina += 1;
-
-                DateTime timeToAdd = nextTime;
-
-                if (lastStaminaTime > nextTime)
-                    timeToAdd = lastStaminaTime;
-
-                nextTime = AddDuration(timeToAdd, timeToRecharge);
-
-            }
-
-            if (staminaAdd)
-            {
-                lastStaminaTime = DateTime.Now;
-                nextStaminaTime = nextTime;
-            }
-            Save();
-            UpdateStaminaUI();
-            UpdateTimerUI();
-            yield return new WaitForEndOfFrame();
-        }
-        recharging = false;
-    }
-
-    DateTime AddDuration(DateTime dateTime, float timeToAdd)
-    {
-        return dateTime.AddSeconds(timeToAdd);
-    }
-
-    public void UseStamina(int staminaToUse)
-    {
-        if (currentStamina - staminaToUse < 0)
-        {
-            Debug.LogError("No tengo suficiente stamina");
-            return;
-        }
-
-        currentStamina -= staminaToUse;
-        UpdateStaminaUI();
-        if (!recharging)
-        {
-            nextStaminaTime = AddDuration(DateTime.Now, timeToRecharge);
-            StartCoroutine(StaminaRecharging());
-        }
-        SendNotification();
-        Save();
-    }
-
-    public void RechargeStamina(int staminaToAdd)
-    {
-        int rechargedStamina = currentStamina += staminaToAdd;
-        UpdateStaminaUI();
-        Save();
-        if (rechargedStamina >= maxStamina)
+	private void Start()
+	{
+		if (!PlayerPrefs.HasKey("CurrentStamina"))
 		{
-            rechargedStamina = maxStamina;
-            UpdateTimerUI();
+			currentStamina = maxStamina;
+			Save();
 		}
 
-        SendNotification();
+		Load();
 
-    }
+		Debug.Log(nextStaminaTime.ToString());
+		UpdateStaminaUI();
+		UpdateTimerUI();
 
-    void UpdateStaminaUI()
-    {
-        staminaText.text = currentStamina.ToString() + "/" + maxStamina.ToString();
-    }
+		SendNotification();
 
-    void UpdateTimerUI()
-    {
-        if (currentStamina >= maxStamina)
-        {
-            timerText.text = "";
-            return;
-        }
+		StartCoroutine(StaminaRecharging());
+	}
 
-        var timer = nextStaminaTime - DateTime.Now;
+	IEnumerator StaminaRecharging()
+	{
+		recharging = true;
+		while (currentStamina < maxStamina)
+		{
+			DateTime currentTime = DateTime.Now;
+			DateTime nextTime = nextStaminaTime;
 
-        timerText.text = timer.Minutes.ToString("00") + ":" + timer.Seconds.ToString("00");
-    }
+			bool staminaAdd = false;
 
-    void Save()
-    {
-        PlayerPrefs.SetInt("CurrentStamina", currentStamina);
-        PlayerPrefs.SetString("LastStaminaTime", lastStaminaTime.ToString());
-        PlayerPrefs.SetString("NextStaminaTime", nextStaminaTime.ToString());
-    }
+			while (currentTime > nextTime)
+			{
+				if (currentStamina >= maxStamina)
+					break;
 
-    void Load()
-    {
-        currentStamina = PlayerPrefs.GetInt("CurrentStamina");
-        lastStaminaTime = StringToDateTime(PlayerPrefs.GetString("LastStaminaTime"));
-        nextStaminaTime = StringToDateTime(PlayerPrefs.GetString("NextStaminaTime"));
-    }
+				staminaAdd = true;
+				currentStamina += 1;
 
-    DateTime StringToDateTime(string date)
-    {
-        if (string.IsNullOrEmpty(date))
-            return DateTime.Now;
-        else
-            return DateTime.Parse(date);
-    }
+				DateTime timeToAdd = nextTime;
 
-    void SendNotification()
-    {
-        NotificationManager.Instance.CancelNotif(notifId);
+				if (lastStaminaTime > nextTime)
+					timeToAdd = lastStaminaTime;
 
-        if (currentStamina >= maxStamina) return;
+				nextTime = AddDuration(timeToAdd, timeToRecharge);
 
-        var timer = (nextStaminaTime - DateTime.Now).Seconds;
-        float timeToSend = (maxStamina - currentStamina - 1) * timeToRecharge + timer;
-        notifId = NotificationManager.Instance.CreateNotification("Ya tenés toda la Stamina", "Podés volver a jugar", timeToSend);
-    }
+			}
+
+			if (staminaAdd)
+			{
+				lastStaminaTime = DateTime.Now;
+				nextStaminaTime = nextTime;
+			}
+			Save();
+			UpdateStaminaUI();
+			UpdateTimerUI();
+			yield return new WaitForEndOfFrame();
+		}
+		recharging = false;
+	}
+
+	DateTime AddDuration(DateTime dateTime, float timeToAdd)
+	{
+		return dateTime.AddSeconds(timeToAdd);
+	}
+
+	public void UseStamina(int staminaToUse)
+	{
+		if (currentStamina - staminaToUse < 0)
+		{
+			Debug.LogError("No tengo suficiente stamina");
+			return;
+		}
+
+		currentStamina -= staminaToUse;
+		UpdateStaminaUI();
+		if (!recharging)
+		{
+			nextStaminaTime = AddDuration(DateTime.Now, timeToRecharge);
+			StartCoroutine(StaminaRecharging());
+		}
+		SendNotification();
+		Save();
+	}
+
+	public void RechargeStamina(int staminaToAdd)
+	{
+		currentStamina += staminaToAdd;
+		UpdateStaminaUI();
+		Save();
+		if (currentStamina >= maxStamina)
+		{
+			currentStamina = maxStamina;
+			UpdateTimerUI();
+			UpdateStaminaUI();
+		}
+
+		SendNotification();
+
+	}
+
+	void UpdateStaminaUI()
+	{
+		if (currentStamina >= maxStamina)
+		{
+			currentStamina = maxStamina;
+		}
+		staminaText.text = currentStamina.ToString() + "/" + maxStamina.ToString();
+	}
+
+	void UpdateTimerUI()
+	{
+		if (currentStamina >= maxStamina)
+		{
+			timerText.text = "";
+			return;
+		}
+
+		var timer = nextStaminaTime - DateTime.Now;
+
+		timerText.text = timer.Minutes.ToString("00") + ":" + timer.Seconds.ToString("00");
+	}
+
+	void Save()
+	{
+		PlayerPrefs.SetInt("CurrentStamina", currentStamina);
+		PlayerPrefs.SetString("LastStaminaTime", lastStaminaTime.ToString());
+		PlayerPrefs.SetString("NextStaminaTime", nextStaminaTime.ToString());
+	}
+
+	void Load()
+	{
+		currentStamina = PlayerPrefs.GetInt("CurrentStamina");
+		lastStaminaTime = StringToDateTime(PlayerPrefs.GetString("LastStaminaTime"));
+		nextStaminaTime = StringToDateTime(PlayerPrefs.GetString("NextStaminaTime"));
+	}
+
+	DateTime StringToDateTime(string date)
+	{
+		if (string.IsNullOrEmpty(date))
+			return DateTime.Now;
+		else
+			return DateTime.Parse(date);
+	}
+
+	void SendNotification()
+	{
+		NotificationManager.Instance.CancelNotif(notifId);
+
+		if (currentStamina >= maxStamina) return;
+
+		var timer = (nextStaminaTime - DateTime.Now).Seconds;
+		float timeToSend = (maxStamina - currentStamina - 1) * timeToRecharge + timer;
+		notifId = NotificationManager.Instance.CreateNotification("Ya tenés toda la Stamina", "Podés volver a jugar", timeToSend);
+	}
 }

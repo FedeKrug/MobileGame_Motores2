@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
 	[SerializeField] private bool _isTheLastDoor = false;
 	[SerializeField] private Transform _parent;
 
+	public bool IsTheLastDoor { get => _isTheLastDoor; set => _isTheLastDoor = value; }
 
 	public void FinishGame()
 	{
@@ -16,7 +17,8 @@ public class Door : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("PlayerInteractor") && _isTheLastDoor)
+		if (!other.CompareTag("PlayerInteractor")) return;
+		if (_isTheLastDoor)
 		{
 			FinishGame();
 		}
@@ -25,6 +27,10 @@ public class Door : MonoBehaviour
 	public void GoTroughTheDoor()
 	{
 		if (_isTheLastDoor) return;
+		if (_parent)
+		{
+
 		_parent.gameObject.SetActive(false);
+		}
 	}
 }

@@ -67,11 +67,17 @@ public class EnemyCounter : MonoBehaviour
 
 	private void OpenDoors()
 	{
+
+
 		if (_doors.Count != 0)
 		{
 
 			for (int i = 0; i < _doors.Count; i++)
 			{
+				if (_doors[i].IsTheLastDoor)
+				{
+					Debug.Log("");
+				}
 				_doors[i].GoTroughTheDoor();
 			}
 		}
