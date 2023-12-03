@@ -30,6 +30,7 @@ public class FinishGameScreen : MonoBehaviour
 	}
 	public void GameOver(bool playerWon)
 	{
+		if (!playerWon) _lastLevel = true;
 		_lastLevelStuff.SetActive(_lastLevel);
 		_normalLevelStuff.SetActive(!_lastLevel);
 
