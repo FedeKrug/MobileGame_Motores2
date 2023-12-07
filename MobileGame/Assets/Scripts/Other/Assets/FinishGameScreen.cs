@@ -13,7 +13,7 @@ public class FinishGameScreen : MonoBehaviour
 	[SerializeField] private GameObject _lastLevelStuff, _normalLevelStuff;
 
 
-	//TODO: Definir playerWon a partir del EnemyCounter
+
 
 	public static FinishGameScreen instance;
 

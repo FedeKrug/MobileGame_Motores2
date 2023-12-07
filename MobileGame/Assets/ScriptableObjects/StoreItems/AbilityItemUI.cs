@@ -2,10 +2,9 @@
 using UnityEngine.UI;
 using TMPro;
 
-public class AbilityItemUI : MonoBehaviour
+public class AbilityItemUI : StoreItem
 {
-    [SerializeField] Image _icon = null;
-    [SerializeField] TextMeshProUGUI _itemName;
+ 
     [SerializeField] TextMeshProUGUI _itemDescription;
 
     public void SetItem(AbilityItemSO itemToRepresent)
