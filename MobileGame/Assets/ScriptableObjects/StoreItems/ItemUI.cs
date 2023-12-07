@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ItemUI : MonoBehaviour
+public class ItemUI : StoreItem
 {
-	[SerializeField] private Image _icon = null;
-	[SerializeField] private TextMeshProUGUI _itemName;
+	
 	[SerializeField] private TextMeshProUGUI _itemPrice;
 	[SerializeField] private Button _itemButton;
 	private int _priceValue;
@@ -34,7 +33,6 @@ public class ItemUI : MonoBehaviour
 		}
 		else
 		{
-
 			int newCoinsCant = DataManager.instance.data.coins -= _priceValue;
 			DataManager.instance.data.coins = newCoinsCant;
 			Debug.Log("Objeto comprado");

@@ -20,6 +20,11 @@ public class MenuManager : MonoBehaviour
 
 	}
 
+	//private void OnEnable()
+	//{
+	//	DataManager.instance.LoadData();
+	//	UpdateMenuUI();
+	//}
 
 	private void Start()
 	{
