@@ -13,7 +13,8 @@ public class ItemUI : MonoBehaviour
 	private int _priceValue;
 	[HideInInspector] public int abilityMastery;
 
-	private void Start()
+
+    private void Start()
 	{
 		_priceValue = int.Parse(_itemPrice.text);
 	}
@@ -22,15 +23,16 @@ public class ItemUI : MonoBehaviour
 		_icon.sprite = itemToRepresent.itemSprite;
 		_itemName.text = itemToRepresent.abilityRef.name + " Boost";
 		_itemPrice.text = itemToRepresent.itemPrice.ToString();
+		_itemButton.onClick.AddListener(itemToRepresent.OnClick);
 	}
 
-	public bool BuyItem()
+	public void BuyItem()
 	{
 		if (DataManager.instance.data.coins < _priceValue)
 		{
 			Debug.Log("No tienes suficiente dinero, mira una ad para conseguir mas monedas");
 			AdManager.instance.GetComponent<RewardedAd>().LoadAd();
-			return false;
+			//return false;
 		}
 		else
 		{
@@ -41,7 +43,7 @@ public class ItemUI : MonoBehaviour
 			//Feedback de compra de objeto
 
 			MenuManager.instance.UpdateMenuUI();
-			return true;
+			//return true;
 		}
 	}
 }

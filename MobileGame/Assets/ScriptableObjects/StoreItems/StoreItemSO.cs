@@ -7,5 +7,9 @@ public class StoreItemSO : ScriptableObject
     public int itemBoost;
     public Sprite itemSprite;
     public AbilitiesSO abilityRef;
- 
+
+    public void OnClick()
+    {
+        abilityRef.abilityMastery += itemBoost;
+    }
 }

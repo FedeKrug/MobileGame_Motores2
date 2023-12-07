@@ -476,7 +476,7 @@ MonoBehaviour:
   _itemName: {fileID: 251288661965342628}
   _itemPrice: {fileID: 683854377829452333}
   _itemButton: {fileID: 7591167994079113676}
-  onStock: 1
+  abilityMastery: 0
 --- !u!1 &4412967797533072723
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +682,18 @@ MonoBehaviour:
       - m_Target: {fileID: -2535067743565875460}
         m_TargetAssemblyTypeName: ItemUI, Assembly-CSharp
         m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 6124450ddf5f7194bb89810480e256bc, type: 2}
+        m_TargetAssemblyTypeName: StoreItemSO, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
